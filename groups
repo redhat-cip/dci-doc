@@ -1,3 +1,5 @@
-# UUID                                  	Group Name
-#
-e9626a8fe7934b2f0667274e8d3a30c20d1dc715	dci-doc-ptl
+# UUID          Group Name
+9562193e1f1647ee1c2004b4fb7996e84ae7e717 	Non-Interactive Users
+0a26089fda008e14f9d47d66fc1f95ffe1efc069       	dci-doc-core
+e9626a8fe7934b2f0667274e8d3a30c20d1dc715        	dci-doc-ptl
+global:Registered-Users		Registered Users
