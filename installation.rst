@@ -144,7 +144,7 @@ Then install its dependencies and dci-control-server itself :
 
 Last action to take is to configure the database server 
 
-  1. Create the DCI database
+1. Create the DCI database
 
 .. code-block:: bash
 
@@ -156,14 +156,14 @@ Last action to take is to configure the database server
   postgres=# CREATE DATABASE dci;
 
 
-  2. Create the DCI user
+2. Create the DCI user
 
 .. code-block:: bash
 
   postgres=# CREATE USER dci WITH CREATEDB PASSWORD 'password';
 
 
-  3. Run the init_db script
+3. Run the init_db script
 
 .. code-block:: bash
 
