@@ -17,6 +17,7 @@ Bare-metal: The minimal configuration for OSP is 4 servers.
 * Hypervisor for the Undercloud and DCI-Agent (Or 2 VM With 2CPU and 4Go RAM each)
 * Controller / Compute (2 CPU with VT or VMX and 16GB of RAM for each)
 
+
 Virtual platform : 
 
 * 1 Hypervisor: the machine should come with a registred RHEL 7 and at least 20GB of memory, 4 CPU and 500GB of disk.
@@ -42,4 +43,3 @@ Configuration
 Distributed CI relies on a tool called Khaleesi ( https://github.com/redhat-openstack/khaleesi ) to deploy OpenStack and run the different tests. The partner should provide a working configuration to deploy an OpenStack that make use of its drivers.
 
 Khaleesi documentation: http://khaleesi.readthedocs.org/en/master/
-
