@@ -8,3 +8,4 @@ Contents:
 
    objective
    installation
+   agent
