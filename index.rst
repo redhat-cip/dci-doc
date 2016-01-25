@@ -9,3 +9,4 @@ Contents:
    objective
    installation
    agent
+   administration
