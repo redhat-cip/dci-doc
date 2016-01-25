@@ -1,5 +1,5 @@
-Adminitration
-=============
+Adminitsration
+==============
 
 Monitoring
 ----------
