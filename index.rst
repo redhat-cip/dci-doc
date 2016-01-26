@@ -10,3 +10,4 @@ Contents:
    installation
    agent
    administration
+   development
