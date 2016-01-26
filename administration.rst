@@ -1,4 +1,4 @@
-Adminitsration
+Administration
 ==============
 
 Monitoring
