@@ -1,15 +1,15 @@
 Development
 ===========
 
-This repository is used to store the configuration of docker
-compose in order to provide an environment for development.
+This page describes how to use docker compose in order to provide a
+development environment.
 
 Getting started
 ---------------
 
-For running dci in docker compose follow those steps:
+To run dci in docker compose follow those steps:
 
-* clone this repository
+* clone the dev repository: https://github.com/redhat-cip/dci-dev-env
 * clone all the dci related project into this repository:
 
   * http://softwarefactory-project.io/r/dci-control-server
@@ -21,16 +21,18 @@ For running dci in docker compose follow those steps:
   the correct versions are described in `requirements.txt <requirements.txt>`_
   you can install those requirements by simply typing:
   ``pip install -r requirements.txt``
-* launch the environment by running docker-compose: ``docker-compose -f dci.yml up``
+* launch the environment by running docker-compose:
+  ``docker-compose -f dci.yml up``
 
 Now the environment is up and running, you can attach containers in order to
-run parts of the applications. For further information see
+run parts of the application. For further information see
 `the containers section <#containers>`_.
 
 Containers
 ----------
 
-There is five container for running the application
+There are six containers, the first four are needed to run the application.
+The two last are helpers for the project.
 
 * **dci_db**: contains the postgresql database, it is started by default and
   serve the database on localhost port 5432.
