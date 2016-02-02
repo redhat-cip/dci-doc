@@ -4,24 +4,15 @@ Installation
 Supported Operating Systems
 ---------------------------
 
-List of current supported operating systems :
+List of current supported operating systems for the Control-Server:
 
   * CentOS 7
 
-Components involved
--------------------
+List of current supported operating systems for the python client:
 
-DCI requires several components to be installed and configured to work together. It relies on proven technologies to bring the most of each and every tool.
-
-* Python :
-
-* PostgreSQL :
-
-* ElasticSearch :
-
-* Angular :
-
-* Gulp :
+  * CentOS 7
+  * Fedora 22
+  * Fedora 23
 
 
 Installation process
@@ -125,22 +116,27 @@ Last action, start the service and configure the firewall so connections can rea
 DCI-API
 ~~~~~~~
 
-As of this version, the dci-api is not packaged yet in any rpm form.
+System packages are available for the dci-api in CentOS 7.
 
-To install DCI, pull the source code from where it is hosted :
-
-.. code-block:: bash
-
-  #> git clone http://softwarefactory-project.io/r/dci-control-server /srv/www/dci-control-server
-
-*Note*: The source code has been voluntarily cloned into /srv/www so that all files delivered by httpd will have the proper SELinux context out of the box.
-
-Then install its dependencies and dci-control-server itself :
+They are located on the DCI repository, to add this repository please install the following package
 
 .. code-block:: bash
 
-  (/srv/www/dci-control-server)#> pip install -r requirements.txt
-  (/srv/www/dci-control-server)#> pip install -e .
+  #> yum -y install http://dci.enovance.com/dci-release.el7.noarch.rpm
+
+To install dci-api, simply install the package
+
+.. code-block:: bash
+
+  #> yum -y install dci-api
+
+Adapt accordingly the configuration file located at /etc/dci-api/settings.py
+
+Critical options are :
+
+  * HOST: the IP of the API host
+  * ES_HOST: the IP of the Elasticsearch host
+  * SQLALCHEMY_DATABASE_URI: The DB connection URL
 
 Last action to take is to configure the database server 
 
@@ -163,72 +159,81 @@ Last action to take is to configure the database server
   postgres=# CREATE USER dci WITH CREATEDB PASSWORD 'password';
 
 
-3. Run the init_db script
+3. Run the dci-dbinit binary that will initialize the database
 
 .. code-block:: bash
 
-  #> export OPENSHIFT_POSTGRESQL_DB_URL=postgresql://dci:password@127.0.0.1/dci
   #> export DCI_LOGIN=admin
   #> export DCI_PASSWORD=admin
-  (/srv/www/dci-control-server)#> python dci/cmd/init_openshift_db.py
+  #> dci-dbinit
+
+Finally this decision is left up to the administrator, but you can either:
+
+  * Run a server on its own for dci-api (python wsgi.py)
+  * Run an httpd proxy server in front and rely on mod_wsgi to run dci-api
+
+If one decide to go with the httpd + mod_wsgi route, this is a working virtual host configuration:
+
+.. code-block:: bash
+
+  <VirtualHost *:80>
+    ServerName api.my.dci.com
+    ServerAdmin root@my.dci.com
+
+    CustomLog logs/api.my.dci.com combined
+    ErrorLog logs/api.my.dci.com_errors
+    DocumentRoot /usr/share/dci-api/
+
+    WSGIScriptAlias / /usr/share/dci-api/wsgi.py
+    WSGIPassAuthorization On
+
+    <Directory /usr/lib/python2.7/site-packages/dci>
+       AllowOverride None
+       Require all granted
+    </Directory>
+
+    <Directory /usr/share/dci-api>
+       AllowOverride None
+       Require all granted
+    </Directory>
+
+  </VirtualHost>
 
 
 DCI-UI
 ~~~~~~~
 
-As of this version, the dci-ui is not packaged yet in any rpm form.
+System packages are available for dci-ui in CentOS 7.
 
-In order to proceed with the installation of the dci-ui several packages needs to be present on the system.
-
-.. code-block:: bash
-
-  #> yum -y install epel-release
-  #> yum -y install nodejs npm git tar bzip2
-  #> npm install -g gulp npm-cache
-
-To install DCI, pull the source code from where it is hosted :
+They are located on the DCI repository, to add this repository please install the following package
 
 .. code-block:: bash
 
-  #> git clone http://softwarefactory-project.io/r/dci-control-server /srv/www/dci-control-server
+  #> yum -y install http://dci.enovance.com/dci-release.el7.noarch.rpm
 
-*Note*: The source code has been voluntarily cloned into /srv/www so that all files delivered by httpd will have the proper SELinux context out of the box.
-
-Then install its dependencies and dci-control-server itself :
+To install dci-ui, simply install the package
 
 .. code-block:: bash
 
-  (/srv/www/dci-control-server)#> pip install -r requirements.txt
-  (/srv/www/dci-control-server)#> pip install -e .
+  #> yum -y install dci-ui
 
-Run npm install in `/srv/www/dci-control-server/dci/dci_data_browser`, to pull the dependencies and then `gulp build` after which the static files will be ready to be served.
-
-.. code-block:: bash
-
-  (/srv/www/dci-control-server/dci/dci_databrowser)#> npm install
-  (/srv/www/dci-control-server/dci/dci_databrowser)#> gulp build
-
-
-In order to serve those files and have it work seemlessly with httpd we recommend users to use httpd + mod_wsgi with a vhost that looks like the following
-
+In order to serve those files we recommend using httpd with a vhost that looks like the following:
 
 .. code-block:: bash
 
   <VirtualHost *:80>
-      ServerName my-dci.com
-      ServerAdmin contact@my-dci.com
+    ServerName my.dci.com
+    ServerAdmin root@my.dci.com
 
-      CustomLog logs/my_dci_com combined
-      ErrorLog logs/my_dci_com_errors
-      DocumentRoot /srv/www/dci-control-server
+    CustomLog logs/my.dci.com combined
+    ErrorLog logs/my.dci.com_errors
+    DocumentRoot /srv/www/dci-ui
 
-      WSGIScriptAlias / /srv/www/dci-control-server/wsgi.py
-      WSGIPassAuthorization On
+    <Directory /srv/www/dci-ui>
+       AllowOverride None
+       Require all granted
+    </Directory>
 
-      <Directory /srv/www/dci-control-server>
-          AllowOverride None
-          Require all granted
-      </Directory>
   </VirtualHost>
 
 
