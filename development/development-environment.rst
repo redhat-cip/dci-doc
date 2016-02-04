@@ -39,19 +39,19 @@ The two last are helpers for the project.
 * **dci_es**: contains the elasticsearch database, it is started by default and
   serve on localhost port 9200 and 9300.
 * **dci_api**: contains the api of the application, it must be started manually
-  (see `the following section for details <#api-container>`_). The API is
+  (see `the following section for details <#api-container>`__). The API is
   served on localhost port 5000.
 * **dci_app**: contains the web app of dci, it must be started manually
-  (see `the following section for details <#app-container>`_). The web
+  (see `the following section for details <#app-container>`__). The web
   application is served on localhost port 8000.
 * **dci_tox**: contains all the needed module for testing, it is not needed
   for running the application but is a helper in order to run tests
   on the client and the API
-  (see `the following section for details <#tox-container>`_).
+  (see `the following section for details <#tox-container>`__).
 * **dci_doc**: helper for building the documentation of the project
-  (see `the following section for details <#doc-container>`_).
+  (see `the following section for details <#doc-container>`__).
 * **dci_dbwatcher**: helper for interacting with the database.
-  (see `the following section for details <#dbwatcher-container>`_).
+  (see `the following section for details <#dbwatcher-container>`__).
 
 API container
 ~~~~~~~~~~~~~
