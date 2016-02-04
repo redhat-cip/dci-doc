@@ -9,5 +9,6 @@ the projects which are used by Distributed CI.
 
    development-environment
    Web application <dci-ui>
+   API <dci-control-server>
 
 .. update index
