@@ -11,3 +11,5 @@ Contents:
    agent
    administration
    development/index
+
+.. update index

@@ -8,3 +8,6 @@ the projects which are used by Distributed CI.
    :maxdepth: 2
 
    development-environment
+   Web application <dci-ui>
+
+.. update index
