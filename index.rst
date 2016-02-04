@@ -10,4 +10,4 @@ Contents:
    installation
    agent
    administration
-   development
+   development/index

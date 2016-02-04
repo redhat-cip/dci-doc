@@ -1,5 +1,5 @@
-Development
-===========
+Development Environment
+=======================
 
 This page describes how to use docker compose in order to provide a
 development environment.
