@@ -1,13 +1,11 @@
 DCI Documentation
 =================
 
-Contents:
-
 .. toctree::
    :maxdepth: 2
 
    objective
-   installation
+   installation/index
    agent
    administration
    development/index
