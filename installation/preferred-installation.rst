@@ -14,18 +14,18 @@ in a repository call `dci-infra`_.
 Ideally this repository should be left intact, no change should apply there. If one sees the need for some
 change please feel free to submit a ticket/pull request on the `Github`_ tracker
 
-Every change should be specific to one's own infrastructure and should happen in dci-infra-quickstasrt explained below.
+Every change should be specific to one's own infrastructure and should happen in dci-infra-data-quickstasrt explained below.
 
-dci-infra-quickstart
---------------------
+dci-infra-data-quickstart
+-------------------------
 
-`dci-infra-quickstart`_ is where all ones custom modifications should happen.
+`dci-infra-data-quickstart`_ is where all ones custom modifications should happen.
 
 This is the ideal worfklow
 
-  1. Fork `dci-infra-quickstart`_ apply the changes required by your infrastructure commit them
+  1. Fork `dci-infra-data-quickstart`_ apply the changes required by your infrastructure commit them
   2. Clone `dci-infra`_
-  3. Clone your fork of `dci-infra-quickstart`_ into a `data/` directory in your `dci-infra`_ clone
+  3. Clone your fork of `dci-infra-data-quickstart`_ into a `data/` directory in your `dci-infra`_ clone
   4. Run `ansible-playbook -i data/hosts playbook.yml`
 
 At the end you should have a succesful deployment of a DCI Control-Server.
@@ -54,4 +54,4 @@ The parameters used for the functionnal test suite are located in `dci-infra-dat
 .. _ansible playbook: https://www.ansible.com
 .. _dci-infra: https://github.com/redhat-cip/dci-infra
 .. _Github: https://github.com/redhat-cip/dci-infra/issues
-.. _dci-infra-quickstart: https://github.com/redhat-cip/dci-infra-quickstart
+.. _dci-infra-data-quickstart: https://github.com/redhat-cip/dci-infra-data-quickstart
