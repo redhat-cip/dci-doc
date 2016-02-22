@@ -53,6 +53,8 @@ In summary it should look like :
 
 At the end you should have a succesful deployment of a DCI Control-Server.
 
+.. note:: If you are provisioning a Fedora 23 server make sure the ``python2``, ``yum`` and ``gnupg`` packages are installed. Else ansible won't work
+
 If your DNS setup is correct, you can log in the value of the ``ui_servername`` variable, with the admin login being admin,
 and the admin password being the value of the ``admin_password`` variable.
 
