@@ -8,6 +8,7 @@ Installation
    deployment-recommendations
    organization
    preferred-installation
+   configuration-variables
    selinux-configuration
 
 .. update index
