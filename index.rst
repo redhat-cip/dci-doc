@@ -9,5 +9,6 @@ DCI Documentation
    agent
    administration
    development/index
+   api/index
 
 .. update index
