@@ -7,6 +7,7 @@ Here is the REST API of the control server.
    :maxdepth: 2
 
    components
+   files
    tests
    topics
 
