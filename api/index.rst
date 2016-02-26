@@ -10,5 +10,6 @@ Here is the REST API of the control server.
    files
    tests
    topics
+   users
 
 .. update index
