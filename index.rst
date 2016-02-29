@@ -6,6 +6,7 @@ DCI Documentation
 
    objective
    installation/index
+   usage/index
    agent
    administration
    development/index
