@@ -1,2 +1,4 @@
 Worflow
 =======
+
+.. image:: workflow.svg
