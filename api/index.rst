@@ -8,6 +8,7 @@ Here is the REST API of the control server.
 
    components
    files
+   jobdefinitions
    tests
    topics
    users
