@@ -1,4 +1,4 @@
-Worflow
-=======
+Workflow
+========
 
 .. image:: workflow.svg
