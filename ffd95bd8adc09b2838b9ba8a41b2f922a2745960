@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3a65312a_949f8450",
+        "filename": "installation/organization.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 247
+      },
+      "writtenOn": "2016-03-03T21:16:25Z",
+      "side": 1,
+      "message": "Agreed. I\u0027ve reworded to something less satanic.",
+      "parentUuid": "3a65312a_d4729c48",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 29
+      },
+      "revId": "ffd95bd8adc09b2838b9ba8a41b2f922a2745960",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a65312a_348f9025",
         "filename": "installation/organization.rst",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2016-03-03T20:20:46Z",
       "side": 1,
       "message": "Needs an apostrophe, although might be better worded as \"The source code for various DCI components...\"",
+      "range": {
+        "startLine": 82,
+        "startChar": 16,
+        "endLine": 82,
+        "endChar": 26
+      },
+      "revId": "ffd95bd8adc09b2838b9ba8a41b2f922a2745960",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_f4acf88e",
+        "filename": "installation/organization.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 247
+      },
+      "writtenOn": "2016-03-03T21:16:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a65312a_348f9025",
       "range": {
         "startLine": 82,
         "startChar": 16,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "3a65312a_d4a9fc7c",
+        "filename": "installation/preferred-installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 247
+      },
+      "writtenOn": "2016-03-03T21:16:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a65312a_14941436",
+      "range": {
+        "startLine": 11,
+        "startChar": 35,
+        "endLine": 11,
+        "endChar": 39
+      },
+      "revId": "ffd95bd8adc09b2838b9ba8a41b2f922a2745960",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a65312a_7499086e",
         "filename": "installation/preferred-installation.rst",
         "patchSetId": 1
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "3a65312a_34b670dd",
+        "filename": "installation/preferred-installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 247
+      },
+      "writtenOn": "2016-03-03T21:16:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a65312a_7499086e",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 13
+      },
+      "revId": "ffd95bd8adc09b2838b9ba8a41b2f922a2745960",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a65312a_549e8c57",
         "filename": "objective.rst",
         "patchSetId": 1
@@ -105,6 +201,30 @@
       "writtenOn": "2016-03-03T20:20:46Z",
       "side": 1,
       "message": "their",
+      "range": {
+        "startLine": 8,
+        "startChar": 46,
+        "endLine": 8,
+        "endChar": 51
+      },
+      "revId": "ffd95bd8adc09b2838b9ba8a41b2f922a2745960",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_14bb74c5",
+        "filename": "objective.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 247
+      },
+      "writtenOn": "2016-03-03T21:16:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a65312a_549e8c57",
       "range": {
         "startLine": 8,
         "startChar": 46,
