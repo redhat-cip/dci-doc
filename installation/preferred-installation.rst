@@ -45,9 +45,9 @@ In summary it should look like :
 
 .. code::
 
-  #> git clone http://github.com/redhat-cip/dci-infra
+  #> git clone https://github.com/redhat-cip/dci-infra
   #> cd dci-infra
-  #> git clone http://github.com/redhat-cip/dci-infra-data-quickstart data
+  #> git clone https://github.com/redhat-cip/dci-infra-data-quickstart data
   #> ansible-galaxy install -r installed_roles -p roles/
   #> ansible-playbook -i data/hosts playbook.yml --tags dci-core
 

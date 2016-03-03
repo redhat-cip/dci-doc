@@ -68,17 +68,17 @@ Upstream
 
 To see the code itself - or contribute - the code is hosted on `Software Factory`_
 
-  * dci-api: http://softwarefactory-project.io/r/dci-control-server
+  * dci-api: https://github.com/redhat-cip/dci-control-server
 
-  * dci-ui: http://softwarefactory-project.io/r/dci-ui
+  * dci-ui: https://github.com/redhat-cip/dci-ui
 
-  * python-dciclient: http://softwarefactory-project.io/r/python-dciclient
+  * python-dciclient: https://github.com/redhat-cip/python-dciclient
 
-  * dci-infra: http://softwarefactory-project.io/r/dci-infra
+  * dci-infra: https://github.com/redhat-cip/dci-infra
 
-  * dci-infra-data-quickstart: http://softwarefactory-project.io/r/dci-infra-data-quickstart
+  * dci-infra-data-quickstart: https://github.com/redhat-cip/dci-infra-data-quickstart
 
-  * dci-doc; http://softwarefactory-project.io/r/dci-doc
+  * dci-doc: http://softwarefactory-project.io/r/dci-doc
 
 Each of those git repository are also mirrored in Github. Under the `redhat-cip`_ namespace.
 

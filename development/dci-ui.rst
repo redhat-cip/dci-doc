@@ -9,7 +9,7 @@ Getting started
 
 To run the app in development mode follow those steps:
 
-* clone the repository: http://softwarefactory-project.io/r/dci-ui
+* clone the repository: https://github.com/redhat-cip/dci-ui
 * ensure that the API server is running (ex: on localhost:5000)
 * fill up the server url in the config template file (``src/config.json.tplt``)
 * run the development server by typing: ``gulp serve:dev``

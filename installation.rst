@@ -267,4 +267,4 @@ Configuration Management
 
 All those steps mentionned above have been automatized with Ansible through the use of playbooks.
 
-Those playbooks are available at http://softwarefactory-project.io/r/dci-infra
+Those playbooks are available at https://github.com/redhat-cip/dci-infra

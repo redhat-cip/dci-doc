@@ -12,7 +12,7 @@ step 5.
 
 To run the api in development mode follow those steps:
 
-1. clone the repository: http://softwarefactory-project.io/r/dci-control-server
+1. clone the repository: https://github.com/redhat-cip/dci-control-server
 2. ensure that a postgresql database is running and accessible on the URI
    defined in the ``src/settings.py`` (if no database is running see
    `database installation`_)
