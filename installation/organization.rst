@@ -1,84 +1,91 @@
 Organization
 ============
 
-The ecosystem of Distributed CI (DCI) relies on several components, some are
-developped by the DCI team while other are well known softwares. DCI relies
+The ecosystem of Distributed CI (DCI) relies on several components. Some are
+developed by the DCI team while others are well known software. DCI relies
 only on packaged softwares for the platform we support.
 
 
 Components
 ----------
 
-The 'core' components provided by the DCI teams itself are :
+The 'core' components provided by the DCI team itself are:
 
-  * **dci-api**: The API (a.k.a the Control-Server), this is where all the
+  * **dci-control-server**: The API (a.k.a the Control-Server). This is where all the
     logic happens.
 
-  * **dci-ui**: The DCI web interface code
+  * **dci-ui**: The DCI web interface code.
 
   * **python-dciclient**: This code hosts the client library and CLI to
-    interact with the dci-api
+    interact with the dci-api.
 
-  * **dci-agents**: Various agents that answers different problematics
+  * **dci-agents**: Various agents to provide integration functionality.
 
-  * **dci-feeders**: Various feeders that will create component on the server
+  * **dci-feeders**: Various feeders that will create components on the server.
 
 
-**Note**: For the packages dci-agents and dci-feeders the code itself is stored
-in the python-dciclient repository
+**Note**: For the packages ``dci-agents`` and ``dci-feeders`` the code itself
+is stored in the ``python-dciclient`` repository.
 
 
 Release Cycle
 -------------
 
 DCI follows a Continuous Deployment (CD) pattern for its own production needs.
-This translate by the fact that as soon as a patch is merged on our code base,
-a package is built, tested and shipped in our repositories. This way our users
-can always benefit from the shiniest and brightest features the last
-contribution brought to the code.
+
+What this means is that as soon as a patch is merged on our code base, a
+package is built, tested, and shipped to our repositories. Through the
+continous deployment methodology, our users can always benefit from the
+shiniest and brightest features the last contribution brought to the code.
 
 For those of who prefer not to live on the edge, the DCI team also provides
-regularly tagged released version.
+regularly tagged release versions.
 
 
 Repositories
 ------------
 
 To provide the aforementioned packages, the DCI team provide a set of
-repository.
+repositories.
 
-They are three repositories:
+There are three repositories:
 
-  * **Current**: This repository contains the tagged released version. They
+  * **Current**: This repository contains the tagged release versions. They
     might be behind the master branch but those versions are stable and receive
-    bug-fix and security backport.
+    bug-fixes and security backports.
 
 
   * **Development**: This repository contains the version of the package built
-    after each commit upstream have been merged and tested. As said earlier the
-    shiniest and brightest of DCI
+    after each commit upstream has been tested and merged. As stated earlier,
+    this repository always contains the latest changes to the system.
 
 
-  * **Extras**: Some version of components we would like to ship are not
-    packaged yet upstream, we do provide the version necessary in this
-    repository.  **Note**: Please verify the content of this repository before
-    pulling any package from it as it can update your local version.
+  * **Extras**: For components that we would like to ship, but are not yet
+    packaged upstream, we provide the packages necessary in the Extras
+    repository.
+    **Note**: Please verify the content of this repository before pulling any
+    packages since it can potentially update your locally installed  version.
 
 
-Those packages are available at http://dci.enovance.com/repos/
+Packages are available at http://dci.enovance.com/repos/
 
-The DCI team provides the dci-release package that will create the repository
-file locally for you.
+The DCI team provides the ``dci-release`` package that will create the
+repository file locally for you.
 
-This package is located at http://dci.enovance.com/dci-release.el7.noarch.rpm
-Please update el7 according to your needs.
+The ``dci-release`` package is located at
+http://dci.enovance.com/dci-release.el7.noarch.rpm. Please update `el7` 
+according to the system you're deploying to.
 
 
 Upstream
 --------
 
-To see the code itself - or contribute - the code is hosted on `Software
-Factory`_
+The source code for various DCI components is hosted on `Software Factory`_,
+and mirrors are provided on GitHub at the following locations. To contribute to
+DCI, you'll need to clone from Gerrit on the `Software Factory`_ site.
+
+Each of those git repositories are also mirrored in GitHub, under the
+`redhat-cip`_ namespace.
 
   * dci-api: https://github.com/redhat-cip/dci-control-server
 
@@ -92,9 +99,6 @@ Factory`_
     https://github.com/redhat-cip/dci-infra-data-quickstart
 
   * dci-doc: http://softwarefactory-project.io/r/dci-doc
-
-Each of those git repository are also mirrored in Github. Under the
-`redhat-cip`_ namespace.
 
 
 .. _Software Factory: http://softwarefactory-project.io/

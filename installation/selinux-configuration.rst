@@ -1,10 +1,10 @@
 SELinux Configuration
 =====================
 
-DCI Control-Server works well with SELinux in enforcing mode.
+The DCI Control-Server works well with SELinux in enforcing mode.
 
-An administrator has two boolean to enable permanently for the Control-Server
-to work 
+An administrator has two boolean values to enable permanently for the 
+Control-Server to work:
 
 * **httpd_can_network_connect_db**: Allow httpd to connect to a database
   through the network
