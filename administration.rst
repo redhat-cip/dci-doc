@@ -11,9 +11,12 @@ DCI is composed of four different parts :
   * The DCI api
   * The DCI ui
 
-The following are our recommendations about what to monitor for each and every component.
+The following are our recommendations about what to monitor for each and every
+component.
 
-Note: The plugin column contain the name of the plugin used with the Sensu monitoring system - that is the one we use internally, please adapt accordingly based on your monitoring platform.
+Note: The plugin column contain the name of the plugin used with the Sensu
+monitoring system - that is the one we use internally, please adapt accordingly
+based on your monitoring platform.
 
 
 Base

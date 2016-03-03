@@ -53,7 +53,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'DCI Documentation'
-copyright = u'2015, Redhat'
+copyright = u'2015-2016, Red Hat'
 author = u'The Distributed-CI team'
 
 # The version info for the project you're documenting, acts as replacement for

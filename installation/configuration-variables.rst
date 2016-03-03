@@ -1,8 +1,8 @@
 Configuration Variables
 =======================
 
-Below is an exhaustive list of the variables the ansible-playbook installer understands.
-They are specified in `dci-infra-data-quickstart/group_vars/all`_
+Below is an exhaustive list of the variables the ansible-playbook installer
+understands. They are specified in `dci-infra-data-quickstart/group_vars/all`_
 
 +--------------------------------+----------------------------+------------------------------------------------------------------------------------+
 | Variable                       | Default Value              | Description                                                                        |

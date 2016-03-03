@@ -103,7 +103,8 @@ Update and install the required packages, then start elasticsearch
 REST interface
 --------------
 
-The REST API is available for any type of objects. You can browse the database on http://127.0.0.1:5000/.
+The REST API is available for any type of objects. You can browse the database
+on http://127.0.0.1:5000/.
 
 Endpoints
 ~~~~~~~~~

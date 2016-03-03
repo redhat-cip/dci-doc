@@ -4,9 +4,11 @@ System Requirements
 Storage
 -------
 
-The DCI Control-Server applications aims to store logs of various agents running a given job.
-The computational part does not happen in the Control-Server itself but on those agents running somewhere else.
-Hence, when one plans to deploy a DCI Control-Server one should plan storage capabilities carefully, as data stored will continually grows.
+The DCI Control-Server applications aims to store logs of various agents
+running a given job. The computational part does not happen in the
+Control-Server itself but on those agents running somewhere else. Hence, when
+one plans to deploy a DCI Control-Server one should plan storage capabilities
+carefully, as data stored will continually grows.
 
 
 Supported Platforms
@@ -25,7 +27,8 @@ Supported Platforms
   * rhel-7-server-optional-rpms (epel dependendcies)
   * rhel-7-server-extras-rpms (epel dependencies)
 
-.. warning:: If you are running ansible < 2.0, you need to apply a specific patch so that one can provision RHEL 7 servers.
+.. warning:: If you are running ansible < 2.0, you need to apply a specific 
+  patch so that one can provision RHEL 7 servers.
 
   In 1.9.4 subscribing to Red Hat entitlement doesn't work.
 
@@ -35,7 +38,9 @@ Supported Platforms
 
   `#> patch /usr/lib/python2.7/site-packages/ansible/modules/core/packaging/os/redhat_subscription.py -i ~/fix_poolid_capitalization.patch`
 
-.. warning:: If you are running ansible < 2.0, you need to install gnupg on Fedora 23 (gnupg2 is installed by default) as Ansible only look for the gpg binary to do rpm_key
+.. warning:: If you are running ansible < 2.0, you need to install gnupg on
+   Fedora 23 (gnupg2 is installed by default) as Ansible only look for the gpg
+   binary to do rpm_key
 
 
 Components Involved

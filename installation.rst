@@ -28,37 +28,47 @@ System packages are available for PostgreSQL.
   #> yum -y install postgresql-server postgesql python-psycopg2
 
 
-Once the packages installed. The administrator needs to initialized the database.
+Once the packages installed. The administrator needs to initialized the
+database.
 
 .. code-block:: bash
 
   #> postgresql-setup initdb
 
 
-Once the database server is initialized, the administrator needs to configure two things
+Once the database server is initialized, the administrator needs to configure
+two things:
 
   1. The IP the PostgreSQL server will be listening on
   2. Which connection are authorized to query the database server
 
 
-To configure the IP address on which PostgreSQL will be listening on, edit the `/var/lib/pgsql/data/postgresql.conf` and edit the `listen_addresses =` line
+To configure the IP address on which PostgreSQL will be listening on, edit the
+`/var/lib/pgsql/data/postgresql.conf` and edit the `listen_addresses =` line
 
 .. code-block:: bash
 
   listen_addresses = '*'
 
-'*' means listen an all interfaces. For more informations about the listen_addresses directive please refers to the official PostgreSQL documentation. (http://www.postgresql.org/docs/9.1/static/runtime-config-connection.html)
+'*' means listen an all interfaces. For more informations about the
+listen_addresses directive please refers to the official PostgreSQL
+documentation.
+(http://www.postgresql.org/docs/9.1/static/runtime-config-connection.html)
 
-To configure the authorized connections, edit the `/var/lib/pgsql/data/pg_hba.conf` and at the bottom of this section specify the connection parameters one needs
+To configure the authorized connections, edit the
+`/var/lib/pgsql/data/pg_hba.conf` and at the bottom of this section specify the
+connection parameters one needs
 
 .. code-block:: bash
 
   host    all             all  10.0.0.0/8            password
 
-The above example will allow any connection from the `10.0.0.0/8` network to connect as long as a user can authentify correctly.
+The above example will allow any connection from the `10.0.0.0/8` network to
+connect as long as a user can authentify correctly.
 
 
-Finally start the service and configure the firewall so connections can reach the database server
+Finally start the service and configure the firewall so connections can reach
+the database server
 
 .. code-block:: bash
 
@@ -71,9 +81,11 @@ Finally start the service and configure the firewall so connections can reach th
 ElasticSearch
 ~~~~~~~~~~~~~
 
-System packages are *not* yet available for ElasticSearch in CentOS 7. Hence we will rely on Elastic RPM repos.
+System packages are *not* yet available for ElasticSearch in CentOS 7. Hence we
+will rely on Elastic RPM repos.
 
-First import their PGP key used to sign their packages and create the `/etc/yum.repos.d/elasticsearch.repo` with the following content :
+First import their PGP key used to sign their packages and create the
+`/etc/yum.repos.d/elasticsearch.repo` with the following content :
 
 .. code-block:: bash
 
@@ -88,14 +100,17 @@ First import their PGP key used to sign their packages and create the `/etc/yum.
   gpgkey=http://packages.elastic.co/GPG-KEY-elasticsearch
   enabled=1
 
-Finally install elasticsearch and its dependency - that is not automatically pulled - the Java opendjk
+Finally install elasticsearch and its dependency - that is not automatically
+pulled - the Java opendjk
 
 .. code-block:: bash
 
   #> yum -y install java-1.8.0-openjdk elasticsearch
 
 
-To configure on which IP the elasticsearch server will be listening on, one needs to edit the `/etc/elasticsearch/elasticsearch.yml` file and update the `network.host` directive
+To configure on which IP the elasticsearch server will be listening on, one
+needs to edit the `/etc/elasticsearch/elasticsearch.yml` file and update the
+`network.host` directive
 
 .. code-block:: bash
 
@@ -103,7 +118,8 @@ To configure on which IP the elasticsearch server will be listening on, one need
 
 The above example will make elasticsearch listening on all IPv4 addresses.
 
-Last action, start the service and configure the firewall so connections can reach the elasticsearch server
+Last action, start the service and configure the firewall so connections can
+reach the elasticsearch server
 
 .. code-block:: bash
 
@@ -118,7 +134,8 @@ DCI-API
 
 System packages are available for the dci-api in CentOS 7.
 
-They are located on the DCI repository, to add this repository please install the following package
+They are located on the DCI repository, to add this repository please install
+the following package
 
 .. code-block:: bash
 
@@ -172,7 +189,8 @@ Finally this decision is left up to the administrator, but you can either:
   * Run a server on its own for dci-api (python wsgi.py)
   * Run an httpd proxy server in front and rely on mod_wsgi to run dci-api
 
-If one decide to go with the httpd + mod_wsgi route, this is a working virtual host configuration:
+If one decide to go with the httpd + mod_wsgi route, this is a working virtual
+host configuration:
 
 .. code-block:: bash
 
@@ -205,7 +223,8 @@ DCI-UI
 
 System packages are available for dci-ui in CentOS 7.
 
-They are located on the DCI repository, to add this repository please install the following package
+They are located on the DCI repository, to add this repository please install
+the following package
 
 .. code-block:: bash
 
@@ -217,7 +236,8 @@ To install dci-ui, simply install the package
 
   #> yum -y install dci-ui
 
-In order to serve those files we recommend using httpd with a vhost that looks like the following:
+In order to serve those files we recommend using httpd with a vhost that looks
+like the following:
 
 .. code-block:: bash
 
@@ -240,7 +260,8 @@ In order to serve those files we recommend using httpd with a vhost that looks l
 SELinux
 ~~~~~~~
 
-If - as recommended - you are using httpd to serve the content of DCI, some actions needs to be taken to make it work seemlessly with SELinux
+If - as recommended - you are using httpd to serve the content of DCI, some
+actions needs to be taken to make it work seemlessly with SELinux
 
 1. Restorecon on /srv/www
 
@@ -265,6 +286,7 @@ If - as recommended - you are using httpd to serve the content of DCI, some acti
 Configuration Management
 ------------------------
 
-All those steps mentionned above have been automatized with Ansible through the use of playbooks.
+All those steps mentionned above have been automatized with Ansible through the
+use of playbooks.
 
 Those playbooks are available at https://github.com/redhat-cip/dci-infra
