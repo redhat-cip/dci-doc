@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a65312a_d4729c48",
+        "filename": "installation/organization.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 303
+      },
+      "writtenOn": "2016-03-03T20:20:46Z",
+      "side": 1,
+      "message": "You deleted a space here erroneously, but I\u0027d suggest a rewording as well.  It\u0027s not entirely clear to me what the intent of the original is.",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 29
+      },
+      "revId": "ffd95bd8adc09b2838b9ba8a41b2f922a2745960",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_348f9025",
+        "filename": "installation/organization.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 303
+      },
+      "writtenOn": "2016-03-03T20:20:46Z",
+      "side": 1,
+      "message": "Needs an apostrophe, although might be better worded as \"The source code for various DCI components...\"",
+      "range": {
+        "startLine": 82,
+        "startChar": 16,
+        "endLine": 82,
+        "endChar": 26
+      },
+      "revId": "ffd95bd8adc09b2838b9ba8a41b2f922a2745960",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_14941436",
+        "filename": "installation/preferred-installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 303
+      },
+      "writtenOn": "2016-03-03T20:20:46Z",
+      "side": 1,
+      "message": "called",
+      "range": {
+        "startLine": 11,
+        "startChar": 35,
+        "endLine": 11,
+        "endChar": 39
+      },
+      "revId": "ffd95bd8adc09b2838b9ba8a41b2f922a2745960",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_7499086e",
+        "filename": "installation/preferred-installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 303
+      },
+      "writtenOn": "2016-03-03T20:20:46Z",
+      "side": 1,
+      "message": "complementary",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 13
+      },
+      "revId": "ffd95bd8adc09b2838b9ba8a41b2f922a2745960",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_549e8c57",
+        "filename": "objective.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 303
+      },
+      "writtenOn": "2016-03-03T20:20:46Z",
+      "side": 1,
+      "message": "their",
+      "range": {
+        "startLine": 8,
+        "startChar": 46,
+        "endLine": 8,
+        "endChar": 51
+      },
+      "revId": "ffd95bd8adc09b2838b9ba8a41b2f922a2745960",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    }
+  ]
+}
