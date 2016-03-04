@@ -9,6 +9,7 @@ Here is the REST API of the control server.
    components
    files
    jobdefinitions
+   remotecis
    tests
    topics
    users
