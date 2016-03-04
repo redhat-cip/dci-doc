@@ -53,5 +53,9 @@ They are specified in `dci-infra-data-quickstart/group_vars/all`_
 +--------------------------------+----------------------------+------------------------------------------------------------------------------------+
 | sensu_dashboard_port           | 3000                       | The port on which the Sensu dashboard (Uchiwa) can be reached)                     |
 +--------------------------------+----------------------------+------------------------------------------------------------------------------------+
+| sensu_dashboard_admin_password | admin_secret               | The password for the admin user of the sensu dashboard (Uchiwa)                    |
++--------------------------------+----------------------------+------------------------------------------------------------------------------------+
+| sensu_dashboard_guest_password | guest_secret               | The password for the guest user of the sensu dashboard (Uchiwa)                    |
++--------------------------------+----------------------------+------------------------------------------------------------------------------------+
 
 .. _dci-infra-data-quickstart/group_vars/all:  https://github.com/redhat-cip/dci-infra-data-quickstart/blob/master/group_vars/all
