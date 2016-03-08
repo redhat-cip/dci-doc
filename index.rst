@@ -7,6 +7,7 @@ DCI Documentation
    objective
    installation/index
    usage/index
+   feeders
    agent
    administration
    development/index

@@ -7,6 +7,7 @@ Installation
    system-requirements
    deployment-recommendations
    organization
+   manual-installation
    preferred-installation
    configuration-variables
    selinux-configuration

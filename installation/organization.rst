@@ -72,10 +72,9 @@ Packages are available at http://dci.enovance.com/repos/
 The DCI team provides the ``dci-release`` package that will create the
 repository file locally for you.
 
-The ``dci-release`` package is located at
-http://dci.enovance.com/dci-release.el7.noarch.rpm. Please update `el7` 
-according to the system you're deploying to.
-
+The ``dci-release`` package is located at http://dci.enovance.com/ for CentOS 7,
+Fedora 22, and Fedora 23. The package name is ``dci-release.XXX.noarch.rpm``
+where ``XXX`` should be replaced with one of ``el7``, ``fc22``, or ``fc23``.
 
 Upstream
 --------

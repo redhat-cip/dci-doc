@@ -1,5 +1,5 @@
-Installation
-============
+Manual Installation
+===================
 
 Supported Operating Systems
 ---------------------------
@@ -11,12 +11,29 @@ List of current supported operating systems for the Control-Server:
 List of current supported operating systems for the python client:
 
   * CentOS 7
-  * Fedora 22
   * Fedora 23
 
 
 Installation process
 --------------------
+
+Repositories
+~~~~~~~~~~~~
+Packages are available to install the DCI repositories. Packages are available
+for CentOS 7 and Fedora 23.
+
+**CentOS 7**
+
+.. code-block:: bash
+
+  #> yum -y install http://dci.enovance.com/dci-release.el7.noarch.rpm
+
+**Fedora 23**
+
+.. code-block:: bash
+
+  #> dnf -y install http://dci.enovance.com/dci-release.fc23.noarch.rpm
+
 
 PostgreSQL
 ~~~~~~~~~~
@@ -132,28 +149,22 @@ reach the elasticsearch server
 DCI-API
 ~~~~~~~
 
-System packages are available for the dci-api in CentOS 7.
+System packages are available for the ``dci-api`` in CentOS 7. See
+`Repositories`_ for information about getting the DCI repositories.
 
-They are located on the DCI repository, to add this repository please install
-the following package
-
-.. code-block:: bash
-
-  #> yum -y install http://dci.enovance.com/dci-release.el7.noarch.rpm
-
-To install dci-api, simply install the package
+To install ``dci-api``, simply install the package:
 
 .. code-block:: bash
 
   #> yum -y install dci-api
 
-Adapt accordingly the configuration file located at /etc/dci-api/settings.py
+Adapt accordingly the configuration file located at ``/etc/dci-api/settings.py``
 
 Critical options are :
 
-  * HOST: the IP of the API host
-  * ES_HOST: the IP of the Elasticsearch host
-  * SQLALCHEMY_DATABASE_URI: The DB connection URL
+  * ``HOST``: the IP of the API host
+  * ``ES_HOST``: the IP of the Elasticsearch host
+  * ``SQLALCHEMY_DATABASE_URI``: The DB connection URL
 
 Last action to take is to configure the database server
 
@@ -221,14 +232,8 @@ host configuration:
 DCI-UI
 ~~~~~~~
 
-System packages are available for dci-ui in CentOS 7.
-
-They are located on the DCI repository, to add this repository please install
-the following package
-
-.. code-block:: bash
-
-  #> yum -y install http://dci.enovance.com/dci-release.el7.noarch.rpm
+System packages are available for ``dci-ui`` in CentOS 7. See `Repositories`_
+for information about getting the DCI repositories.
 
 To install dci-ui, simply install the package
 
