@@ -2,67 +2,72 @@ Terminology
 ===========
 
 Like every project, Distributed CI has its own terms with specific meanings. As
-understaning those terms is key to grasp how DCI works, here is an exhaustive
+understanding those terms is key to grasp how DCI works, here is an exhaustive
 list with their meanings.
 
 Agent
 -----
 
-The very core purpose of DCI is that given a set of Components uploaded by an
-admin, a user subscribed to those components can pull them and do **anything**
-with them. The **anything** aforementioned is where the business-logic takes
-place. An Agent is a script where users specify what to do with the retrieved
-set of Components.
+The core purpose of DCI is that given a set of `Components`_, an `Agent`
+subscribed to those components can pull them and do **anything** with them.
+
+The **anything** aforementioned is where the business-logic takes place. An
+`Agent` is a script where administrators specify what to do with the retrieved
+set of `Components`.
 
 
 Control-Server
 --------------
 
-Distributed CI is a client/server application. Control-Server is the server
-part. This is where the Components, the Jobs and all the logs related are
-stored and browsable. It is the central point of supervision to know the health
-of a given set of Components (a Jobdefinition) across all users. It provides
-also a modern web interface for user to browse the outputs of their Jobs.
+Distributed CI is a client/server application. The `Control-Server` is the
+server part. 
+
+The `Control-Server` is where the `Components`_, the `Jobs`_ and all the logs
+related to CI runs are stored and browsable. It is the central point of
+supervision to know the health of a given set of `Components` (a
+`Jobdefinition`_) across all users. It also provides a modern web interface for
+users to browse the output of their `Jobs`.
 
 
-Component
----------
+Components
+----------
 
-A Component is an object, an artifact (file, package, url, nearly anything)
-that an agent will take as input in its workflow. Those components are
-regurlaly updated with newer version of the object through Feeders.
-
-
-Feeder
-------
-
-Scripts in charge of uploading newer versions of Components to the
-Control-Server are called Feeders. They are traditionnaly run either
-event-based (new release) or on a timely basis (ie. once a day)
+A `Component` is an artifact (file, package, url, etc.) that an `Agent`_ will
+take as input in its workflow. Those components are regularly updated with
+newer versions of the artifact through `Feeders`_.
 
 
-Job
----
+Feeders
+-------
 
-A Job is the run of a Jobdefinition by a specific Remote CI. A single
-Jobdefinition can be run by N Remote CI, thus creating N jobs. The job will
-hold all the informations related to the run of the Agent with this
-Jobdefinition, the logs output, the result of test suite, Job context file,
-etc...
+A `Feeder` is a script in charge of uploading newer versions of `Components`_
+to the `Control-Server`_. They are run either event-based (new release) or
+schedule-based (e.g. once a day). `Components` are referenced via a
+`Jobdefinition`_ as created by the `Feeder`.
+
+
+Jobs
+----
+
+A Job is the run of a `Jobdefinition`_ by a specific `Remote CI`_. A single
+`Jobdefinition` can be run by `N` Remote CI, thus creating `N` jobs. The job
+will hold all the information related to the run of the `Agent`_ with this
+`Jobdefinition`, the log output, the result of test suite, job context file,
+etc.
 
 
 Jobdefinition
 -------------
 
-A Jobdefinition is a set of Components.
+A `Jobdefinition` is a set of `Components`_.
 
 
 Jobstate
 --------
 
-During its run, an Agent will go through different Jobstate.
+During a `Job` run, an `Agent`_ will go through the different `Jobstates`.
 
-The valid Jobstate list is :
+The valid `Jobstates` are:
 
   * new
   * pre-run
@@ -71,22 +76,23 @@ The valid Jobstate list is :
   * failure
   * success
 
-During each Jobstate the agent will perform different tasks.
+During each `Jobstate` the `Agent` will perform different tasks.
 
 
 Remote CI
 ---------
 
-A server (physical or virtual) on which the Agent run. It belongs to a team.
+A server (physical or virtual) on which the `Agent`_ will run. It belongs to a
+`Team`_.
 
 
 Team
 ----
 
-A Team is a set of User and Remote CI.
+A Team is a set of `Users`_ and `Remote CI`_.
 
 
-User
-----
+Users
+-----
 
-A User, no special meaning here. It belongs to a team, and can be admin or not.
+A `User` belongs to a `Team`_, and can be an administrator or standard user.
