@@ -289,6 +289,109 @@ Check *component* list:
         --dci-password welcome \
         component-list --topic_id be660493-8a69-4a53-8fc3-14545e6f9d85
 
+
+Running a feeder using systemd
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Now that we've validated our feeder, we can instantiate the feeder from
+**systemd** instead of running things manually on the console. When the feeders
+are installed from the RPM, systemd unit files are also installed. These
+systemd unit file templates allow you to instantiate one or more feeders, and
+set them up to run periodically.
+
+Our Github systemd unit file is located in ``/usr/lib/systemd/system/`` as
+files ``dci-feeder-github@.service`` and ``dci-feeder-github@.timer`` which are
+the templates for scheduling one-off and periodic feeder runs (respectively).
+
+.. sidebar:: Using Systemd Templates
+
+   When using systemd templates, you pass an argument to the template, such as
+   a filename containing environment variable information. The format for this
+   argument is a bit unique, which can take some getting used to.
+
+   Inside the template are markers that get replaced during unit creation. In
+   the case of the ``dci-feeder-github`` templates, the markers ``%i`` and
+   ``%I`` are utilized. The lowercase version is replaced with the characters
+   passed into the unit file between the ``@`` and the suffix of the unit name.
+   The uppercase version is the same value, unescaped.
+
+   As the escaping sequence can be a bit strange, we'll make use of the
+   ``systemd.escape`` application to automatically build our escaped filenames
+   for us. See systemd.unit_ for more information.
+
+To setup our feeders with systemd, we need to first create a file to hold our
+environment variables so that the template understands where to look for
+information that will get passed to the feeder application. For the Github
+feeder, these are located in the ``/etc/sysconfig/dci-feeder-github/``
+directory.
+
+Next we name the environment file based on the Github repository we're going to
+monitor. We'll make use of the ``systemd-escape`` command which will convert
+the repository name into the correct format.
+
+.. note:: The way the escaping works (with it being passed to the unit template
+   file, and then back out when it attempts to read the ``EnvironmentFile``
+   value), can get pretty confusing. We're going to eliminate some of the
+   manual changes that would be required through a simple bash oneliner.
+
+We only need the organization and repository name from the Github URL (rather
+than the whole Github URL). For example, if we wanted to create a *component*
+and *jobdefinition* for https://github.com/redhat-cip/dci-infra, we'd only need
+the ``redhat-cip/dci-infra`` portion of the URL.
+
+Let's pass this to the ``systemd-escape`` command and see what our escaped
+repository looks like::
+
+    systemd-escape redhat-cip/dci-infra
+    redhat\x2dcip-dci\x2dinfra
+
+The next step is to create an environment file that contains the login
+information for our DCI Control-Server and the topic ID we want to associate
+the component and jobdefinition to. As noted earlier the format of the filename
+is particular, but we have a simple script we can run that will take some of
+the guesswork out of the file naming.
+
+::
+
+    cd /etc/sysconfig/dci-feeder-github/
+    touch $(systemd-escape redhat-cip/dci-infra | tr -d \\)
+
+Our resulting filename will be ``redhatx2dcip-dcix2dinfra``, which is the same
+as our escaped output, but without the backslashes.
+
+Now we can modify the file and add the following environment variables:
+
+* ``DCI_CS_URL``
+* ``DCI_LOGIN``
+* ``DCI_PASSWORD``
+* ``DCI_TOPIC_ID``
+
+As before, set these values to your DCI Control-Server URL, login name, login
+password, and topic ID (to associate this feeder with).
+
+The last step is to pass this file to the systemd unit template, and create our
+component and jobdefinition.
+
+::
+
+    systemctl start 'dci-feeder-github@redhat\x2dcip-dci\x2dinfra.service'
+
+.. note:: The service unit filename has been passed to ``systemctl`` in single
+   quotes in order to automatically escape the backslashes.
+
+After running this command, if you don't have any errors, you should be able to
+validate that your component and jobdefinition were created on the DCI
+Control-Server. (See Validation_ for more information.)
+
+If you want to run this periodically on a timer, replace ``.service`` in the
+``systemctl`` command with ``.timer``. You can list the timed services with
+``systemctl list-timers``.
+
+::
+
+    systemctl list-timers
+    NEXT                         LEFT          LAST  PASSED  UNIT                                               ACTIVATES
+    Tue 2016-03-15 00:10:00 UTC  5h 18min left n/a   n/a     dci-feeder-github@redhat\x2dcip-dci\x2dinfra.timer dci-feeder-github@redhat\x2dcip-dci\x2dinfra.service
+
 Next steps
 ^^^^^^^^^^
 
@@ -299,3 +402,4 @@ information.
 .. _dci-infra: https://github.com/redhat-cip/dci-infra
 .. _python-dciclient: http://github.com/redhat-cip/python-dciclient
 .. _Agents: agent.html
+.. _systemd.unit: https://www.freedesktop.org/software/systemd/man/systemd.unit.html
