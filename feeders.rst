@@ -207,7 +207,7 @@ within the ``testing_team``. Let's test our agent by connecting to the DCI
 Control-Server at the console.
 
 .. note:: The user namespace is flat, so you can't have duplicate
-   usernamesacross multiple teams.
+   usernames across multiple teams.
 
 Connecting to an artifact resource
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
