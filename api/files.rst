@@ -3,7 +3,8 @@ Files
 
 .. http:post:: /api/v1/files
 
-   Create a file.
+   Create a file. The maximum size of an upload is controlled on the server
+   side by the MAX_CONTENT_LENGTH configuration key. The default value is 20MB.
 
    **Example request**:
 
