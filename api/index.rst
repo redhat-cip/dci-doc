@@ -9,6 +9,7 @@ Here is the REST API of the control server.
    audits
    components
    files
+   jobs
    jobdefinitions
    jobstates
    remotecis
