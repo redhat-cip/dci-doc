@@ -13,6 +13,7 @@ Here is the REST API of the control server.
    jobdefinitions
    jobstates
    remotecis
+   search
    teams
    tests
    topics

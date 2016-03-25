@@ -1,5 +1,5 @@
-Tests
-=====
+Audits
+======
 
 .. http:get:: /api/v1/audits
 
