@@ -211,3 +211,58 @@ Topics
    :resheader Content-Type: application/json
    :statuscode 204: no error
    :statuscode 400: error on topic id or team id, maybe a conflict
+
+.. http:get:: /api/v1/topics/<topic_id>/components/<component_id>/jobs
+
+   Get all the jobs which rely on a specific component.
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      GET /api/v1/topics/f45deaa8-d1ca-4184-88ab-a9ed01e74f99/components/0cc895f5-18af-45e7-a844-05e861bdc966/jobs HTTP/1.1
+      Accept: application/json
+      Content-Length: 0
+      Host: 127.0.0.1:5000
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.0 200 OK
+      Content-Length: 1606
+      Content-Type: application/json
+
+      {
+          "_meta": {
+              "count": 2
+          },
+          "jobs": [
+              {
+                  "comment": null,
+                  "configuration": {},
+                  "created_at": "2016-05-23T21:32:59.329834",
+                  "etag": "21b290ceaacfa149f519df7aa4589273",
+                  "id": "d88882a8-a82b-4f42-9985-7f990f71cab6",
+                  "jobdefinition_id": "ad606326-0968-4230-963d-701688eb897f",
+                  "recheck": false,
+                  "remoteci_id": "41f0dc69-d619-4548-a672-ed26eb182c93",
+                  "status": "pre-run",
+                  "team_id": "921a7e52-d52a-491c-b959-fab151c0f6b4",
+                  "updated_at": "2016-05-24T07:32:59.329862"
+              },
+              {
+                  "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor.Lorem ipsum dolor sit amet, consectetur adipiscing elit.\nDonec a diam lectus. Sed sit amet ipsum mauris.\nMaecenas congue ligula ac quam viverra nec consectetur ante hendrerit.",
+                  "configuration": {},
+                  "created_at": "2016-05-24T07:32:59.335345",
+                  "etag": "9928ecc7cd7e639967120a994fe189f4",
+                  "id": "8dc276db-c82d-4432-baee-cbeb64f1d5c8",
+                  "jobdefinition_id": "d139dff1-e8db-474d-b476-cafb82728cb0",
+                  "recheck": false,
+                  "remoteci_id": "41f0dc69-d619-4548-a672-ed26eb182c93",
+                  "status": "new",
+                  "team_id": "921a7e52-d52a-491c-b959-fab151c0f6b4",
+                  "updated_at": "2016-05-24T11:32:59.335362"
+              }
+          ]
+      }
