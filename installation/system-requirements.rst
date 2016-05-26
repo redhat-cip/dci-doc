@@ -22,7 +22,7 @@ Supported Platforms
 
 .. note:: **For RHEL7 the following channels need to be enabled:**
 
-  * rhel-7-server-extras-htb-rpms (python-erkzeug)
+  * rhel-7-server-extras-htb-rpms (python-werkzeug)
   * rhel-7-server-openstack-5.0-rpms (python-flask, python-passlib)
   * rhel-7-server-openstack-7.0-rpms (python-elasticsearch)
   * rhel-7-server-ose-3.1-rpms (Ansible, Elasticsearch)
