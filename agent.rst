@@ -1,6 +1,56 @@
 Agents
 ======
 
+Scheduling Agents
+-----------------
+
+As every user might use DCI each on its own way, the DCI team can't maintain every possible agent.
+Our focus is made toward making the `python-dciclient` stable, solid and full-featured.
+
+This way every user can create its own agent relying on the common library `python-dciclient`.
+
+Agent is supposed to be run on a regular basis, in an automated fashion.
+The DCI team recommends the use of `systemd.timer(5)` to achieve this.
+
+The way it works, an administrator needs to create two files.
+
+First file is a `.service` file, that will run the agent itself.
+
+::
+
+  #> cat /etc/systemd/system/myagent.service
+  [Unit]
+  Description=My really own DCI agent
+
+  [Service]
+  Type=oneshot
+  ExecStart=/usr/bin/dci-agent-myagent
+
+Second file is a `.timer` file, that will periodically call the `.service` file.
+
+::
+
+  #> cat /etec/systemd/system/myagent.timer
+  [Unit]
+  Description=My realy own DCI agent timer
+
+  [Timer]
+  OnCalendar=Mon-Fri *-*-* 7-19/3:00:00
+  Persistent=true
+
+  [Install]
+  WantedBy=timers.target
+
+
+The most important piece of information here is the OnCalendar parameter. Here it is stated that the agent will be run from Monday to Friday every three hours between 7:00am and 7:00pm. More on that can be found in systemd.time_ documentation.
+
+Finally run the following command so the system take into account the latest changes:
+
+::
+
+   #> systemctl daemon-reload
+
+
 Khaleesi
 --------
 
@@ -49,3 +99,5 @@ different tests. The partner should provide a working configuration to deploy an
 OpenStack that make use of its drivers.
 
 Khaleesi documentation: http://khaleesi.readthedocs.org/en/master/
+
+:: _systemd.time: https://www.freedesktop.org/software/systemd/man/systemd.time.html#
