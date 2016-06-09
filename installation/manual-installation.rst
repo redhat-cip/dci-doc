@@ -26,13 +26,13 @@ for CentOS 7 and Fedora 23.
 
 .. code-block:: bash
 
-  #> yum -y install http://dci.enovance.com/dci-release.el7.noarch.rpm
+  #> yum -y install https://packages.distributed-ci.io/dci-release.el7.noarch.rpm
 
 **Fedora 23**
 
 .. code-block:: bash
 
-  #> dnf -y install http://dci.enovance.com/dci-release.fc23.noarch.rpm
+  #> dnf -y install http://packages.distributed-ci.io/dci-release.fc23.noarch.rpm
 
 
 PostgreSQL

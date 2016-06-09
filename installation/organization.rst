@@ -67,12 +67,12 @@ There are three repositories:
     packages since it can potentially update your locally installed  version.
 
 
-Packages are available at http://dci.enovance.com/repos/
+Packages are available at https://packages.distributed-ci.io/repos/
 
 The DCI team provides the ``dci-release`` package that will create the
 repository file locally for you.
 
-The ``dci-release`` package is located at http://dci.enovance.com/ for CentOS 7,
+The ``dci-release`` package is located at https://packages.distributed-ci.io/ for CentOS 7,
 Fedora 22, and Fedora 23. The package name is ``dci-release.XXX.noarch.rpm``
 where ``XXX`` should be replaced with one of ``el7``, ``fc22``, or ``fc23``.
 
