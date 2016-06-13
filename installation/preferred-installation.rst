@@ -99,4 +99,4 @@ The parameters used for the functional test suite are located in
 .. _dci-infra: https://github.com/redhat-cip/dci-infra
 .. _Github: https://github.com/redhat-cip/dci-infra/issues
 .. _dci-infra-data-quickstart: https://github.com/redhat-cip/dci-infra-data-quickstart
-.. _configuration variables: http://doc.dci.enovance.com/installation/configuration-variables.html
+.. _configuration variables: http://docs.distributed-ci.io/installation/configuration-variables.html
