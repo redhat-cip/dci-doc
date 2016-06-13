@@ -40,7 +40,7 @@ to match your infrastructure.
 After modifying the configuration, the workflow continues as follows:
 
   1. Clone `dci-infra`_
-  2. Clone ``dci-infra-data-production`` into a ``data/`` directory in your 
+  2. Clone ``dci-infra-data-quickstart`` into a ``data/`` directory in your
      ``dci-infra`` directory
   3. Install the necessary ansibles modules by running
      ``ansible-galaxy install -r installed_roles -p roles/``
