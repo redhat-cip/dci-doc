@@ -234,9 +234,9 @@ Let's pass the Github URL along with our topic ID and login information to the
         --github-url http://github.com/redhat-cip/python-dciclient
 
 We pass several flags to the ``dci-feeder-github`` application in order to
-authenticate and connect to our DCI Control-Server. Our first argument is the
-``topic_id`` value we created earlier, and the second argument is the URL for
-our artifact source.
+authenticate and connect to our DCI Control-Server. The ``--dci-topic-id``
+contains the ``topic_id`` value we created earlier The ``--github-url`` flag is
+the URL for our artifact source.
 
 You'll notice that we've used ``http://api.nfvci.int`` as our hostname for the
 DCI Control-Server. When you configured the DCI Control-Server initially
