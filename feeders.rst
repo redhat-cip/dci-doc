@@ -373,7 +373,7 @@ component and jobdefinition.
 
 ::
 
-    systemctl start 'dci-feeder-github@redhat\x2dcip-dci\x2dinfra.service'
+    systemctl start 'dci-feeder-github@redhat\\x2dcip-dci\\x2dinfra.service'
 
 .. note:: The service unit filename has been passed to ``systemctl`` in single
    quotes in order to automatically escape the backslashes.
