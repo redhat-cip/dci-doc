@@ -230,8 +230,8 @@ Let's pass the Github URL along with our topic ID and login information to the
         --dci-cs-url 'http://api.nfvci.int' \
         --dci-login remoteci_1 \
         --dci-password welcome \
-        be660493-8a69-4a53-8fc3-14545e6f9d85 \
-        http://github.com/redhat-cip/python-dciclient
+        --dci-topic-id be660493-8a69-4a53-8fc3-14545e6f9d85 \
+        --github-url http://github.com/redhat-cip/python-dciclient
 
 We pass several flags to the ``dci-feeder-github`` application in order to
 authenticate and connect to our DCI Control-Server. Our first argument is the
