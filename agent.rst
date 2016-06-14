@@ -30,7 +30,7 @@ Second file is a `.timer` file, that will periodically call the `.service` file.
 
 ::
 
-  #> cat /etec/systemd/system/myagent.timer
+  #> cat /etc/systemd/system/myagent.timer
   [Unit]
   Description=My realy own DCI agent timer
 
