@@ -61,7 +61,7 @@ Requirements
 Hardware
 ^^^^^^^^
 
-OpenStack can deployed either on dedicated bare-metal nodes or on an existing
+OpenStack can be deployed either on dedicated bare-metal nodes or on an existing
 hypervisor as a Virtual Platform.
 
 Bare-metal: The minimal configuration for OSP is 4 servers.
