@@ -15,6 +15,12 @@ The **anything** aforementioned is where the business-logic takes place. An
 `Agent` is a script where administrators specify what to do with the retrieved
 set of `Components`.
 
+Context
+-------
+
+A context is a namespace holding the connection information to a particular DCI
+control server. Both feeders and agents open a connection via the context
+module, and communicate with the API over that connection.
 
 Control-Server
 --------------
