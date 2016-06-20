@@ -77,7 +77,7 @@ dedicated container, just after attaching it with
 Like the api you need to perform some operations before running the app:
 
 * install npm dependencies for the application: ``npm install``
-* run the application: `gulp serve:dev`
+* run the application: ``gulp serve:dev``
 
 This container also contains some targets for testing the frontend, see the
 `gulpfile <https://github.com/redhat-cip/dci-ui/blob/master/gulpfile.js>`_
