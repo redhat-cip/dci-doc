@@ -20,7 +20,7 @@ Jobdefinitions
           "priority": "100",
           "topic_id": "8621c080-9dce-47eb-ae8b-c47ea1caadc5",
           "test_id": "3e4224bd-7587-4390-898f-6390637caf7e",
-          "component_types": ['puddle_osp', 'puddle_ospd']
+          "component_types": ["puddle_osp", "puddle_ospd"]
       }
 
    **Example response**:
@@ -41,7 +41,7 @@ Jobdefinitions
               "name": "jobdefinition_name",
               "id": "f640022c-495f-43c8-9952-ac2c7000e87d",
               "priority": "100",
-              "component_types": ['puddle_osp', 'puddle_ospd']
+              "component_types": ["puddle_osp", "puddle_ospd"]
           }
       }
 
@@ -55,6 +55,7 @@ Jobdefinitions
    :resheader Content-Type: application/json
    :statuscode 201: no error
    :statuscode 422: error on request data, maybe a conflict
+
 
 .. http:delete:: /api/v1/jobdefinitions/<jobdefinition-id>
 
@@ -113,7 +114,7 @@ Jobdefinitions
               "name": "jobdefinition_name",
               "id": "f640022c-495f-43c8-9952-ac2c7000e87d",
               "priority": "100",
-              "component_types": ['puddle_osp', 'puddle_ospd']
+              "component_types": ["puddle_osp", "puddle_ospd"]
           }
       }
 

@@ -12,5 +12,6 @@ DCI Documentation
    administration
    development/index
    api/index
+   client
 
 .. update index

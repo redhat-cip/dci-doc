@@ -185,6 +185,7 @@ Components
               }
           ]
       }
+
    :reqheader Accept: application/json
    :reqheader Authorization: Basic authentication credentials
    :resheader Content-Type: application/json

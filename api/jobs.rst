@@ -396,33 +396,33 @@ Jobs
       Content-Type: application/json
 
       {
-          "_meta": {
-              "count": 2
-          },
-          "jobs": [
-            {
-              "id": "cbd0ad1b-1f4b-4056-8c82-27ff9511e37f",
-              "etag": "f6cad3d32fde30a7a4b2beeed4002705",
-              "status": "new",
-              "comment": "some comment",
-              "recheck": true,
-              "created_at": "2016-02-25T13:32:41.706080",
-              "updated_at": "2016-02-25T13:32:41.706080",
-              "remoteci_id": "68bf9302-e9f7-41fb-89a1-823516dac13b",
-              "jobdefinition_id": "d4344452-f367-4b16-b0dd-fca87571e384",
-              "team_id": "0c6b70b0-ae41-461a-af89-a2bd408b43f5"
-            }, {
-              id": "95691d7f-d09e-427e-9230-e08063f6ba33",
-              "etag": "ade963cd93e892f2a5979fba78f9bc71",
-              "status": "running",
-              "comment": "some other comment",
-              "recheck": false,
-              "created_at": "2016-02-25T13:32:41.706080",
-              "updated_at": "2016-02-25T13:32:41.706080",
-              "remoteci_id": "68bf9302-e9f7-41fb-89a1-823516dac13b",
-              "jobdefinition_id": "ca9ea007-1541-42d3-8207-f120611182f5",
-              "team_id": "0c6b70b0-ae41-461a-af89-a2bd408b43f5"
-            }
+        "_meta": {
+          "count": 2
+        },
+        "jobs": [
+          {
+            "id": "cbd0ad1b-1f4b-4056-8c82-27ff9511e37f",
+            "etag": "f6cad3d32fde30a7a4b2beeed4002705",
+            "status": "new",
+            "comment": "some comment",
+            "recheck": true,
+            "created_at": "2016-02-25T13:32:41.706080",
+            "updated_at": "2016-02-25T13:32:41.706080",
+            "remoteci_id": "68bf9302-e9f7-41fb-89a1-823516dac13b",
+            "jobdefinition_id": "d4344452-f367-4b16-b0dd-fca87571e384",
+            "team_id": "0c6b70b0-ae41-461a-af89-a2bd408b43f5"
+          }, {
+            "id": "95691d7f-d09e-427e-9230-e08063f6ba33",
+            "etag": "ade963cd93e892f2a5979fba78f9bc71",
+            "status": "running",
+            "comment": "some other comment",
+            "recheck": false,
+            "created_at": "2016-02-25T13:32:41.706080",
+            "updated_at": "2016-02-25T13:32:41.706080",
+            "remoteci_id": "68bf9302-e9f7-41fb-89a1-823516dac13b",
+            "jobdefinition_id": "ca9ea007-1541-42d3-8207-f120611182f5",
+            "team_id": "0c6b70b0-ae41-461a-af89-a2bd408b43f5"
+          }
         ]
       }
 
