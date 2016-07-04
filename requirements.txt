@@ -1,2 +1,4 @@
 sphinxcontrib-httpdomain
+sphinx
 sphinx_rtd_theme
+-e ./python-dciclient
