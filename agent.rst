@@ -42,7 +42,7 @@ Second file is a `.timer` file, that will periodically call the `.service` file.
   WantedBy=timers.target
 
 
-The most important piece of information here is the OnCalendar parameter. Here it is stated that the agent will be run from Monday to Friday every three hours between 7:00am and 7:00pm. More on that can be found in systemd.time_ documentation.
+The most important piece of information here is the OnCalendar parameter. Here it is stated that the agent will be run from Monday to Friday every three hours between 7:00am and 7:00pm. More on that can be found in ``systemd.time`` documentation.
 
 Finally run the following command so the system takes into account the latest changes and enable the timer.
 
