@@ -206,6 +206,54 @@ Jobs
    :statuscode 401: unauthorized
    :statuscode 404: not found
 
+
+.. http:get:: /api/v1/jobs/<job-id>/results
+
+   Get all results for a specific job.
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      GET /api/v1/jobs/660abf0b998bf17842f376ca6def6eae/results HTTP/1.1
+      Accept: application/json
+      Authorization: Basic YWRta321YWetaW4=
+      Content-Length: 0
+      Host: 127.0.0.1:5000
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.0 200 OK
+      Content-Length: 1137
+      Content-Type: application/json
+
+      {
+        "_meta": {
+          "count": 1
+        },
+        "results": {
+          "res_junit.xml": {
+            "errors": "0",
+            "failures": "0",
+            "name": "pytest",
+            "skips": "1",
+            "success": 2,
+            "time": "46.050",
+            "total": "3"
+          }
+        }
+      }
+
+   :reqheader Accept: application/json
+   :reqheader Authorization: Basic authentication credentials
+   :resheader Content-Type: application/json
+   :statuscode 200: no error
+   :statuscode 401: unauthorized
+   :statuscode 404: not found
+
+
 .. http:get:: /api/v1/jobs/<job-id>/files
 
    Get all files for a specific job.
