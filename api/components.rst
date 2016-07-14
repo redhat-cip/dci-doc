@@ -191,3 +191,44 @@ Components
    :resheader Content-Type: application/json
    :statuscode 200: no error
    :statuscode 400: bad request
+
+.. http:get:: /api/v1/topics/<topic-id>/components/<component-id>/jobs
+
+   Get all jobs from a components in a topic.
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      GET /api/v1/topics/e78cf47c-12a7-4af7-bdb3-50352e6e32e1/components/123e4567-e89b-12d3-a456-426655440000/jobs HTTP/1.1
+      Accept: application/json
+      Authorization: Basic YWRta321YWetaW4=
+      Content-Length: 0
+      Host: 127.0.0.1:5000
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      {
+          "_meta": {
+              "count": 140
+          }, 
+          "jobs": [
+              {
+                  "comment": null, 
+                  "configuration": {}, 
+                  "created_at": "2016-07-06T16:06:52.051195", 
+                  "etag": "a648856530d8a04ada16e2157d26042a", 
+                  "id": "de2b2d59-d58d-406f-b6b2-f31c3895cae8", 
+                  "jobdefinition_id": "2ba03e3b-8a7e-4df4-ac10-543c37876292", 
+                  "recheck": false, 
+                  "remoteci_id": "d7cebe5b-1785-4052-9f7f-b747e5dfbda7", 
+                  "status": "new", 
+                  "team_id": "d4bd6bd7-4a61-4043-b8c7-5f6c1d86d965", 
+                  "updated_at": "2016-07-06T16:06:52.051195"
+              },
+	      ....
+          ]
+      }
+
