@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5adbc538_26181c84",
+        "filename": "usage/terminology.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 247
+      },
+      "writtenOn": "2016-07-27T14:05:58Z",
+      "side": 1,
+      "message": "of a",
+      "range": {
+        "startLine": 74,
+        "startChar": 18,
+        "endLine": 74,
+        "endChar": 22
+      },
+      "revId": "fa4f873609b7365e35b5ab51f2252a586cec8ab6",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5adbc538_062c00ab",
+        "filename": "usage/terminology.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 247
+      },
+      "writtenOn": "2016-07-27T14:05:58Z",
+      "side": 1,
+      "message": "is a subset",
+      "range": {
+        "startLine": 74,
+        "startChar": 8,
+        "endLine": 74,
+        "endChar": 17
+      },
+      "revId": "fa4f873609b7365e35b5ab51f2252a586cec8ab6",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5adbc538_66122464",
+        "filename": "usage/terminology.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 247
+      },
+      "writtenOn": "2016-07-27T14:05:58Z",
+      "side": 1,
+      "message": "Jobstate",
+      "range": {
+        "startLine": 82,
+        "startChar": 6,
+        "endLine": 82,
+        "endChar": 15
+      },
+      "revId": "fa4f873609b7365e35b5ab51f2252a586cec8ab6",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5adbc538_86173051",
+        "filename": "usage/terminology.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 247
+      },
+      "writtenOn": "2016-07-27T14:05:58Z",
+      "side": 1,
+      "message": "to the",
+      "range": {
+        "startLine": 92,
+        "startChar": 14,
+        "endLine": 92,
+        "endChar": 17
+      },
+      "revId": "fa4f873609b7365e35b5ab51f2252a586cec8ab6",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5adbc538_a60b4c2a",
+        "filename": "usage/terminology.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 247
+      },
+      "writtenOn": "2016-07-27T14:05:58Z",
+      "side": 1,
+      "message": "One of the nodes is considered to be a jumpbox.",
+      "range": {
+        "startLine": 101,
+        "startChar": 0,
+        "endLine": 101,
+        "endChar": 29
+      },
+      "revId": "fa4f873609b7365e35b5ab51f2252a586cec8ab6",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5adbc538_c6085830",
+        "filename": "usage/terminology.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 247
+      },
+      "writtenOn": "2016-07-27T14:05:58Z",
+      "side": 1,
+      "message": ". T",
+      "range": {
+        "startLine": 101,
+        "startChar": 56,
+        "endLine": 101,
+        "endChar": 59
+      },
+      "revId": "fa4f873609b7365e35b5ab51f2252a586cec8ab6",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5adbc538_e6055415",
+        "filename": "usage/terminology.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 247
+      },
+      "writtenOn": "2016-07-27T14:05:58Z",
+      "side": 1,
+      "message": "Control",
+      "range": {
+        "startLine": 102,
+        "startChar": 27,
+        "endLine": 102,
+        "endChar": 34
+      },
+      "revId": "fa4f873609b7365e35b5ab51f2252a586cec8ab6",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    }
+  ]
+}
