@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "5adbc538_31e9381b",
+        "filename": "usage/terminology.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 247
+      },
+      "writtenOn": "2016-07-27T16:59:23Z",
+      "side": 1,
+      "message": "Actually it should just be singular, so:  is a subset of a `Jobdefinition`.",
+      "parentUuid": "5adbc538_d13654e7",
+      "range": {
+        "startLine": 74,
+        "startChar": 18,
+        "endLine": 74,
+        "endChar": 22
+      },
+      "revId": "fa4f873609b7365e35b5ab51f2252a586cec8ab6",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5adbc538_66122464",
         "filename": "usage/terminology.rst",
         "patchSetId": 1
