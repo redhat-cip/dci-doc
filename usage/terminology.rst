@@ -26,7 +26,7 @@ Control-Server
 --------------
 
 Distributed CI is a client/server application. The `Control-Server` is the
-server part. 
+server part.
 
 The `Control-Server` is where the `Components`_, the `Jobs`_ and all the logs
 related to CI runs are stored and browsable. It is the central point of
@@ -39,8 +39,8 @@ Components
 ----------
 
 A `Component` is an artifact (file, package, url, etc.) that an `Agent`_ will
-take as input in its workflow. Those components are regularly updated with
-newer versions of the artifact through `Feeders`_.
+take as input in its workflow. Those components are immutable and regularly
+updated with newer versions of the artifact through `Feeders`_.
 
 
 Feeders
@@ -65,7 +65,13 @@ etc.
 Jobdefinition
 -------------
 
-A `Jobdefinition` is a set of `Components`_.
+A `Jobdefinition` is a template describing the `Components` expected for a `Job`.
+
+
+Topics
+-----
+
+A topic is a subset of `Jobdefinition`. For example, OSPx.
 
 
 Jobstate
@@ -73,7 +79,7 @@ Jobstate
 
 During a `Job` run, an `Agent`_ will go through the different `Jobstates`.
 
-The valid `Jobstates` are:
+Each `Jobstate` has a status from this list:
 
   * new
   * pre-run
@@ -82,14 +88,19 @@ The valid `Jobstates` are:
   * failure
   * success
 
-During each `Jobstate` the `Agent` will perform different tasks.
+During each `Jobstate` the `Agent` will perform different tasks. `Files`
+can be attach to the `Jobstate`.
 
 
 Remote CI
 ---------
 
-A server (physical or virtual) on which the `Agent`_ will run. It belongs to a
-`Team`_.
+A platform and the production configuration. It belongs to a `Team`_. The platform can
+be physical, virtual or hybrid.
+
+One of the nodes is the jumpbox.  It will host the `Agent`, this service is in charge of
+the interactions with the `Control-Server` and the platform.
+A `Remote CI` is associated to a set of `Topics`.
 
 
 Team
