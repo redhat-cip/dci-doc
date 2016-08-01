@@ -480,3 +480,130 @@ Jobs
    :resheader Content-Type: application/json
    :statuscode 200: no error
    :statuscode 401: unauthorized
+
+
+.. http:post:: /api/v1/jobs/<job-id>/issues
+
+   Attach an issue to a specific job.
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      POST /api/v1/jobs/660abf0b998bf17842f376ca6def6eae/issues HTTP/1.1
+      Host: example.com
+      Accept: application/json
+      Authorization: Basic YWRtaW46YWRtaW4=
+
+      {
+        "url": "https://github.com/redhat-cip/python-dciclient/isssues/5",
+      }
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+
+      HTTP/1.0 201 CREATED
+      Access-Control-Allow-Origin: *
+      Content-Length: 276
+      Content-Type: application/json
+      Date: Tue, 23 Feb 2016 13:55:32 GMT
+      Server: Werkzeug/0.10.4 Python/2.7.6
+
+      {
+        "issue_id": "2aa7041c-28a8-47fc-93f7-ff8e4954bb18",
+        "job_id": "660abf0b998bf17842f376ca6def6eae"
+      }
+
+
+   :jsonparam url: Public URL of the issue
+   :reqheader Accept: application/json
+   :reqheader Authorization: Basic authentication credentials
+   :resheader Content-Type: application/json
+   :statuscode 201: no error
+   :statuscode 422: error on request data, maybe issue is already attached to this job
+
+
+.. http:get:: /api/v1/jobs/<job-id>/issues
+
+   Get all issues attached to a job.
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      GET /api/v1/jobs/660abf0b998bf17842f376ca6def6eae/issues HTTP/1.1
+      Accept: application/json
+      Authorization: Basic YWRta321YWetaW4=
+      Content-Length: 0
+      Host: example.com
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.0 200 OK
+      Access-Control-Allow-Origin: *
+      Content-Length: 3961
+      Content-Type: application/json
+
+      {
+        "_meta": {
+          "count": 1
+        },
+        "issues": [
+          {
+            "status": "open",
+            "product": "redhat-cip",
+            "reporter": "IxDay",
+            "url": "https://github.com/redhat-cip/python-dciclient/issues/5",
+            "created_at": "2016-03-03T10:36:55Z",
+            "title": "Introduce a real logger",
+            "component": "python-dciclient",
+            "updated_at": "2016-06-15T19:34:37Z",
+            "assignee": null,
+            "issue_id": 5,
+            "tracker": "github",
+            "closed_at": null,
+            "id": "2aa7041c-28a8-47fc-93f7-ff8e4954bb18"
+          }
+        ]
+      }
+
+   :reqheader Accept: application/json
+   :reqheader Authorization: Basic authentication credentials
+   :resheader Content-Type: application/json
+   :statuscode 200: no error
+   :statuscode 401: unauthorized
+
+
+.. http:delete:: /api/v1/jobs/<job-id>/issues/<issue-id>
+
+   Unattach an issue from a job.
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      DELETE /api/v1/jobs/660abf0b998bf17842f376ca6def6eae/issues/2aa7041c-28a8-47fc-93f7-ff8e4954bb18 HTTP/1.1
+      Accept: application/json
+      Authorization: Basic YWRta321YWetaW4=
+      Content-Length: 0
+      Host: example.com
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.0 204 NO CONTENT
+      Access-Control-Allow-Origin: *
+      Content-Length: 0
+      Content-Type: application/json
+
+   :reqheader Accept: application/json
+   :reqheader Authorization: Basic authentication credentials
+   :resheader Content-Type: application/json
+   :statuscode 204: no error
+   :statuscode 401: unauthorized
+   :statuscode 404: not found
