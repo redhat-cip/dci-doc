@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5adbc538_7c12b063",
+        "filename": "usage/terminology.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 247
+      },
+      "writtenOn": "2016-08-08T16:44:43Z",
+      "side": 1,
+      "message": "I really think you should keep examples more generic rather than relying on OSP, but clearly not a blocker.",
+      "range": {
+        "startLine": 74,
+        "startChar": 53,
+        "endLine": 74,
+        "endChar": 57
+      },
+      "revId": "024de2224f25a5127b16349c4ce2791f0545cbcf",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5adbc538_9c177c51",
+        "filename": "usage/terminology.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 247
+      },
+      "writtenOn": "2016-08-08T16:44:43Z",
+      "side": 1,
+      "message": "One of the nodes",
+      "revId": "024de2224f25a5127b16349c4ce2791f0545cbcf",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    }
+  ]
+}
