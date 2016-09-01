@@ -15,7 +15,7 @@ Tests
 
       {
         "name": "test_name",
-        "topic_id": "e78cf47c-12a7-4af7-bdb3-50352e6e32e1"
+        "team_id": "e78cf47c-12a7-4af7-bdb3-50352e6e32e1"
       }
 
    **Example response**:
@@ -35,7 +35,7 @@ Tests
           "data": {},
           "id": "3e4224bd-7587-4390-898f-6390637caf7e",
           "name": "ptdr",
-          "topic_id": "e78cf47c-12a7-4af7-bdb3-50352e6e32e1"
+          "team_id": "e78cf47c-12a7-4af7-bdb3-50352e6e32e1"
         }
       }
 
@@ -102,7 +102,7 @@ Tests
               "data": {},
               "id": "51cad1bf-f7b4-4ebe-865f-6d19e8fd186f",
               "name": "tox",
-              "topic_id": "e78cf47c-12a7-4af7-bdb3-50352e6e32e1"
+              "team_id": "e78cf47c-12a7-4af7-bdb3-50352e6e32e1"
           }
       }
 
@@ -111,6 +111,26 @@ Tests
    :resheader Content-Type: application/json
    :statuscode 200: no error
    :statuscode 404: test not found
+
+.. http:post:: /api/v1/topics/<topic-id>/tests
+
+   Attach a test to a topic (Only the super admin can do this)
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      POST /api/v1/tests HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+      {
+        "test_id": "51cad1bf-f7b4-4ebe-865f-6d19e8fd186f"
+      }
+
+   **Example response**:
+
+   .. sourcecode:: http
 
 
 .. http:get:: /api/v1/topics/<topic-id>/tests
@@ -161,3 +181,11 @@ Tests
    :resheader Content-Type: application/json
    :statuscode 200: no error
    :statuscode 400: bad request
+
+.. http:post:: /api/v1/remotecis/<remoteci-id>/tests
+
+   Attach a test to a remoteci (Only users in the remoteci's team can do it)
+
+.. http:get:: /api/v1/remotecis/<remoteci-id>/tests
+
+   Get all tests of a Remote CI.
