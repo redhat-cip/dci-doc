@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab895d6_acb08ef5",
+        "filename": "api/tests.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 115
+      },
+      "writtenOn": "2016-09-09T13:55:39Z",
+      "side": 1,
+      "message": "extra spaces",
+      "revId": "9fb0120aeee6e9b1f1a2d9f8e99b7949ed2b6bc8",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_cc94e246",
+        "filename": "api/tests.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 115
+      },
+      "writtenOn": "2016-09-09T13:55:39Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "9fb0120aeee6e9b1f1a2d9f8e99b7949ed2b6bc8",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    }
+  ]
+}
