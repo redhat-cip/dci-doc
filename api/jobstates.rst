@@ -60,7 +60,7 @@ Job States
    :statuscode 400: error on request data, request is malformed,
      see payload for informations
    :statuscode 401: unauthorized
-   :statuscode 422: error on request data, maybe a conflict
+   :statuscode 409: error on request data, maybe a conflict
 
 .. http:delete:: /api/v1/jobstates/<jobstate-id>
 

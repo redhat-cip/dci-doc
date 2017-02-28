@@ -53,7 +53,7 @@ Files
    :reqheader Authorization: Basic authentication credentials
    :resheader Content-Type: application/json
    :statuscode 201: no error
-   :statuscode 422: error on request data, maybe a conflict
+   :statuscode 409: error on request data, maybe a conflict
 
 .. http:delete:: /api/v1/files/<file-id>
 
@@ -82,7 +82,7 @@ Files
    :reqheader Authorization: Basic authentication credentials
    :resheader Content-Type: application/json
    :statuscode 204: no error
-   :statuscode 422: error on file id, maybe a conflict
+   :statuscode 409: error on file id, maybe a conflict
 
 .. http:get:: /api/v1/files/<file-id>
 

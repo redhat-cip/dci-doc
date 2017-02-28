@@ -60,7 +60,7 @@ Remote CIs
    :statuscode 400: error on request data, request is malformed,
      see payload for informations
    :statuscode 401: unauthorized
-   :statuscode 422: error on request data, maybe a conflict
+   :statuscode 409: error on request data, maybe a conflict
 
 .. http:put:: /api/v1/remotecis/<remoteci-id>
 
@@ -110,7 +110,7 @@ Remote CIs
     see payload for informations
    :statuscode 401: unauthorized
    :statuscode 404: not found
-   :statuscode 422: error on request data, maybe a conflict
+   :statuscode 409: error on request data, maybe a conflict
 
    **Note**: You must provide an ETag header in order to make the API call
    works. If not an error will be issued. The response ETag value is also

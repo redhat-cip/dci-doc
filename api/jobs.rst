@@ -123,7 +123,7 @@ Jobs
     see payload for informations
    :statuscode 401: unauthorized
    :statuscode 404: not found
-   :statuscode 422: error on request data, maybe a conflict
+   :statuscode 409: error on request data, maybe a conflict
 
    **Note**: You must provide an ETag header in order to make the API call
    works. If not an error will be issued. The response ETag value is also
@@ -366,7 +366,7 @@ Jobs
    :reqheader Authorization: Basic authentication credentials
    :resheader Content-Type: application/json
    :statuscode 201: no error
-   :statuscode 422: error on request data, maybe a conflict
+   :statuscode 409: error on request data, maybe a conflict
 
 .. http:get:: /api/v1/jobs/<job-id>/jobstates
 
@@ -522,7 +522,7 @@ Jobs
    :reqheader Authorization: Basic authentication credentials
    :resheader Content-Type: application/json
    :statuscode 201: no error
-   :statuscode 422: error on request data, maybe issue is already attached to this job
+   :statuscode 409: error on request data, maybe issue is already attached to this job
 
 
 .. http:get:: /api/v1/jobs/<job-id>/issues

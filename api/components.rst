@@ -46,7 +46,7 @@ Components
    :reqheader Authorization: Basic authentication credentials
    :resheader Content-Type: application/json
    :statuscode 201: no error
-   :statuscode 422: error on request data, maybe a conflict
+   :statuscode 409: error on request data, maybe a conflict
 
 .. http:delete:: /api/v1/components/<component-id>
 
@@ -75,7 +75,7 @@ Components
    :reqheader Authorization: Basic authentication credentials
    :resheader Content-Type: application/json
    :statuscode 204: no error
-   :statuscode 422: error on component id, maybe a conflict
+   :statuscode 409: error on component id, maybe a conflict
 
 .. http:get:: /api/v1/components/<component-id>
 

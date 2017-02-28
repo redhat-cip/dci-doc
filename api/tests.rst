@@ -45,7 +45,7 @@ Tests
    :reqheader Authorization: Basic authentication credentials
    :resheader Content-Type: application/json
    :statuscode 201: no error
-   :statuscode 422: error on request data, maybe a conflict
+   :statuscode 409: error on request data, maybe a conflict
 
 .. http:delete:: /api/v1/tests/<test-id>
 
@@ -73,7 +73,7 @@ Tests
    :reqheader Authorization: Basic authentication credentials
    :resheader Content-Type: application/json
    :statuscode 204: no error
-   :statuscode 422: error on test id, maybe a conflict
+   :statuscode 409: error on test id, maybe a conflict
 
 .. http:get:: /api/v1/tests/<test-id>
 
