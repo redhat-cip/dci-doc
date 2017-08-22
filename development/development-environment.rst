@@ -65,7 +65,7 @@ To initialize this container you need to perform some operations:
 * initialize or reinitialize the database by running
   `./scripts/db_provisioning.py <https://github.com/redhat-cip/dci-control-server/blob/master/scripts/db_provisioning.py>`_
 * start the development server by running
-  `./script/runtestserver.py <https://github.com/redhat-cip/dci-control-server/blob/master/scripts/db_provisioning.py>`_
+  `./bin/dci-runtestserver <https://github.com/redhat-cip/dci-control-server/blob/master/bin/dci-runtestserver>`_
 
 APP container
 ~~~~~~~~~~~~~
