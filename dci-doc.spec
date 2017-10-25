@@ -22,12 +22,12 @@ served by a web server.
 
 
 %install
-install -d %{buildroot}/var/www/html/docs.distributed-ci.io
-cp -r * %{buildroot}/var/www/html/docs.distributed-ci.io
+install -d %{buildroot}/var/www/html/docs
+cp -r * %{buildroot}/var/www/html/docs
 
 
 %files
-/var/www/html/docs.distributed-ci.io/*
+/var/www/html/docs/*
 
 
 %changelog
