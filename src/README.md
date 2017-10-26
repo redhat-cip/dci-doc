@@ -1,4 +1,4 @@
-# DCI
+![image](./logo.png)
 
 The goal of Distributed CI (DCI) is to extend Red Hat production chain on partner platforms.
 
