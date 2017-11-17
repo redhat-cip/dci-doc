@@ -1,5 +1,6 @@
 {
   "root": "./src",
+  "title": "DCI",
   "styles": {
     "website": "styles.css"
   },
