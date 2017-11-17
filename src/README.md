@@ -16,11 +16,61 @@ While we focused on accelerating our delivery of good products, partners had to 
 
 ![image](./workflow.png)
 
- 1. Components are Red Hat products that have passed continuous integration. For OSP for example a component is a tarball with all valid rpm.
- 2. Feeder automatically push new components into DCI control server.
- 3. Users can manage theirs resources directly threw the user interface: [https://www.distributed-ci.io](https://www.distributed-ci.io)
- 4. Any user with a valid DCI subscription on [https://sso.redhat.com](https://sso.redhat.com) can access to the interface.
- 5. User can manage theirs resources with DCI client package.
- 6. dci-control-server is a REST API which manage all the resources, roles and permissions for DCI.
- 7. The agent is an Ansible playbook consuming dci-ansible modules. The agent is build by the partner with the help of Red Hat engineers.
- 8. The agent run the installation of the chosen component on partner's infrastructure. At the end of the installation, Red Hat tests and certifications are run.
+
+# Terminology
+
+Like every project, Distributed CI has its own terms with specific meanings. As understanding those terms is key to grasp how DCI works, here is an exhaustive list with their meanings.
+
+## Product
+
+A product is the main abstraction that describe a Red Hat product (RHEL, OpenStack, RHV).
+
+## Topic
+
+A topic is a subset of a product. For example, RHEL7 or OSP10.
+
+## Component
+
+A component is an artifact (file, package, url, etc.) attached to a [topic](#topic). An [agent](#agent) take a component in its workflow. Those components are immutable and regularly updated with newer versions of the artifact through a [feeder](#feeder).
+
+## Feeder
+
+A feeder is a script in charge of uploading newer versions of [components](#component) to the [control server](#control-server). They are run either event-based (new release) or schedule-based (e.g. once a day). [Components](#component) are created by the feeder.
+
+## Agent
+
+The core purpose of DCI is that given a set of [components](#component), an agent will pull them, install and run certification and validation tests.
+
+An agent is a script (ansible, python, bash) that automates the installation of a [components](#component). We try to use the same agent for a given [product](#product). The agent is the result of collaboration between a partner and Red Hat. DCI offers one agent per [product](#product). It is up to the partner to put his automation.
+
+## Job
+
+A Job is the result of the run of an [agent](#agent) for a given [components](#component) by a specific [remote ci](#remote-ci).
+
+## Control-Server
+
+Distributed CI is a client/server application. The control server is the server part.
+
+The control server is where the [components](#component), the [jobs](#job) and all the logs related to CI runs are stored and browsable. It is the central point of supervision to know the health of a given [product](#product) across all users. It also provides a modern web interface for users to browse the output of their Jobs.
+
+## Remote CI
+
+A platform and the production configuration. It belongs to a [team](#team). The platform can be physical, virtual or hybrid.
+
+One of the nodes is the jumpbox. It will host the Agent, this service is in charge of the interactions with the [control server](#control-server) and the platform. A Remote CI is associated to a set of Topics.
+
+## Team
+
+A team represents a set of [users](#user).
+
+## User
+
+A User belongs to a [team](#team), and can be a [product owner](#product-owner), an [administrator](#administrator) or standard user.
+
+### Product Owner
+
+A product owner is able to manage one product and teams attached to this product. 
+
+### Administrator
+
+Administrator is able to manage users in his team.
