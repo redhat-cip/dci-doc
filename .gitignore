@@ -2,3 +2,9 @@ _build/
 node_modules/
 _book/
 *.pdf
+src/dci-ui
+src/python-dciclient
+src/python-dciauth
+src/dci-control-server
+src/dci-ansible
+src/dci-dev-env

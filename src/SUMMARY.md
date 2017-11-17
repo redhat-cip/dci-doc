@@ -1,11 +1,12 @@
 # Summary
 
 * [Introduction](README.md)
-* [Terminology](terminology.md)
-* [dci-dev-env](dci-dev-env/README.md)
-* [dci-ansible-agent](dci-ansible-agent/README.md)
-* [dci-ansible](dci-ansible/README.md)
-* [dci-control-server](dci-control-server/README.md)
-    * [signature_authentication](dci-control-server/docs/signature_authentication.md)
-* [dci-feeder](dci-feeder/README.md)
-* [dci-ui](dci-ui/README.md)
+* [Contribute](dci-dev-env/README.md)
+* [User Interface](dci-ui/README.md)
+* [Command Line Interface](python-dciclient/README.md)
+* [API](dci-control-server/README.md)
+* [Authentication module](python-dciauth/README.md)
+* [Ansible module](dci-ansible/README.md)
+* [Agents](dci-ansible-agent/README.md)
+    * [OpenStack Agent](dci-ansible-agent/README.md)
+
