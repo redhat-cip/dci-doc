@@ -24,9 +24,6 @@ Below is an exhaustive list of the variables the ansible-playbook installer unde
 | apihost       | 127.0.0.1   | The IP address on which the DCI API    |
 |               |             | can be reached                         |
 +---------------+-------------+----------------------------------------+
-| eshost        | 127.0.0.1   | The IP address on which the            |
-|               |             | ElasticSearch API can be reached       |
-+---------------+-------------+----------------------------------------+
 | servername    | dci.example | Global domain name for DCI             |
 |               | .com        |                                        |
 +---------------+-------------+----------------------------------------+

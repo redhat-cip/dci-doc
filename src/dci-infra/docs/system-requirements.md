@@ -16,8 +16,7 @@ When planning to deploy a DCI Control-Server, you need to plan storage capabilit
 
  * rhel-7-server-extras-htb-rpms (python-werkzeug)
  * rhel-7-server-openstack-5.0-rpms (python-flask, python-passlib)
- * rhel-7-server-openstack-7.0-rpms (python-elasticsearch)
- * rhel-7-server-ose-3.1-rpms (Ansible, Elasticsearch)
+ * rhel-7-server-ose-3.1-rpms (Ansible)
  * rhel-7-server-optional-rpms (epel dependendcies)
  * rhel-7-server-extras-rpms (epel dependencies)
 
@@ -40,7 +39,6 @@ If you are running Ansible &lt; 2.0, you need to install gnupg on
 ## Components Involved
 
  * PostgreSQL
- * ElasticSearch
  * Python
  * Apache
 

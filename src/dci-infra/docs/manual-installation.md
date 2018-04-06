@@ -73,48 +73,6 @@ Finally start the service and configure the firewall so connections can reach th
 #> firewall-cmd --reload
 ```
 
-### ElasticSearch
-
-System packages are *not* yet available for ElasticSearch in CentOS 7. Hence we will rely on Elastic RPM repos.
-
-First import their PGP key used to sign their packages and create the /etc/yum.repos.d/elasticsearch.repo with the following content :
-
-``` sourceCode
-#> rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
-```
-
-``` sourceCode
-[elasticsearch-2.x]
-name=Elasticsearch repository for 2.x packages
-baseurl=http://packages.elastic.co/elasticsearch/2.x/centos
-gpgcheck=1
-gpgkey=http://packages.elastic.co/GPG-KEY-elasticsearch
-enabled=1
-```
-
-Finally install elasticsearch and its dependency - that is not automatically pulled - the Java opendjk
-
-``` sourceCode
-#> yum -y install java-1.8.0-openjdk elasticsearch
-```
-
-To configure on which IP the elasticsearch server will be listening on, one needs to edit the /etc/elasticsearch/elasticsearch.yml file and update the network.host directive
-
-``` sourceCode
-network.host: 0.0.0.0
-```
-
-The above example will make elasticsearch listening on all IPv4 addresses.
-
-Last action, start the service and configure the firewall so connections can reach the elasticsearch server
-
-``` sourceCode
-#> systemctl start elasticsearch
-#> systemctl enable elasticsearch
-#> firewall-cmd --add-port 9200/tcp --add-port 9300/tcp --permanent
-#> firewall-cmd --reload
-```
-
 ### DCI-API
 
 System packages are available for the `dci-api` in CentOS 7. See [Repositories]() for information about getting the DCI repositories.
@@ -130,7 +88,6 @@ Adapt accordingly the configuration file located at `/etc/dci-api/settings.py`
 Critical options are :
 
  * `HOST`: the IP of the API host
- * `ES_HOST`: the IP of the Elasticsearch host
  * `SQLALCHEMY_DATABASE_URI`: The DB connection URL
 
 Last action to take is to configure the database server

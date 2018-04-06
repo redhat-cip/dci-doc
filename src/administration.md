@@ -5,7 +5,6 @@
 DCI is composed of four different parts :
 
  * The database (PostgreSQL)
- * The log storage backend (ElasticSearch)
  * The DCI api
  * The DCI ui
 
@@ -51,15 +50,6 @@ This applies for all nodes, independently of their roles.
 | eSQL   | hecks     |       |       | 5432 -t 30                     |
 +--------+-----------+-------+-------+--------------------------------+
 
-### ElasticSearch
-
-+-------------+--------------+--------+--------+----------------------+
-| Service     | Plugin name  | Warnin | Critic | Check                |
-|             |              | g      | al     |                      |
-+=============+==============+========+========+======================+
-| ElasticSear | elasticsearc | N/A    | N/A    | check-es-node-status |
-| ch          | h            |        |        | .rb                  |
-+-------------+--------------+--------+--------+----------------------+
 
 ### DCI-API
 
