@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-projects="dci-ui python-dciclient python-dciauth dci-control-server dci-ansible dci-dev-env"
+projects="dci-ui python-dciclient python-dciauth dci-control-server dci-ansible dci-ansible-agent dci-dev-env"
 for project in ${projects}
 do
     pushd /tmp
