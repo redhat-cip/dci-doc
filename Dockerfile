@@ -1,7 +1,7 @@
 FROM centos:7
 
 LABEL name="DCI DOC" version="0.0.1"
-MAINTAINER DCI Team <distributed-ci@redhat.com>
+LABEL maintainer="DCI Team <distributed-ci@redhat.com>"
 
 RUN echo -e "[google-chrome]\n\
 name=google-chrome - x86_64\n\
