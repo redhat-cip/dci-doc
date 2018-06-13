@@ -8,5 +8,5 @@
 * [Authentication module](python-dciauth/README.md)
 * [Ansible module](dci-ansible/README.md)
 * [Agents](dci-ansible-agent/README.md)
-    * [OpenStack Agent](dci-ansible-agent/README.md)
-
+    * [OpenStack Agent Basic](dci-ansible-agent/README.md)
+    * [Openstack Agent Advanced](dci-ansible-agent/README_advanced.md)
