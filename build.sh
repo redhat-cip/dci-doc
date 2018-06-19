@@ -10,7 +10,7 @@ do
     popd
     rm -rf ./src/${project}
     mkdir ./src/${project}
-    cp /tmp/${project}/README.md ./src/${project}/README.md
+    cp /tmp/${project}/README* ./src/${project}/
     cp -r /tmp/${project}/docs/ ./src/${project}/docs/ 2>/dev/null
     rm -rf /tmp/${project}
 done
