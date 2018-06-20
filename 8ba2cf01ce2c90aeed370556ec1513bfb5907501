@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3d019a06_992fd8d9",
+        "filename": "build.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 30
+      },
+      "writtenOn": "2018-06-20T19:24:03Z",
+      "side": 1,
+      "message": "What about just: *.md",
+      "revId": "8ba2cf01ce2c90aeed370556ec1513bfb5907501",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    }
+  ]
+}
