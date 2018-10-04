@@ -15,5 +15,9 @@ do
     rm -rf /tmp/${project}
 done
 
+if [ -n "${DCI_ORIGINAL_PROJECT_NAME}" ]; then
+    test -d ./src/${DCI_ORIGINAL_PROJECT_NAME} && cp -rv ${DCI_ORIGINAL_PROJECT_SRC_DIR}/README*.md ./src/${DCI_ORIGINAL_PROJECT_NAME}
+fi
+
 npm install
 npm run build
