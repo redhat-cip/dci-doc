@@ -10,10 +10,15 @@ do
     popd
     rm -rf ./src/${project}
     mkdir ./src/${project}
-    cp /tmp/${project}/README* ./src/${project}/
-    cp -r /tmp/${project}/docs/ ./src/${project}/docs/ 2>/dev/null
+    cp -v /tmp/${project}/README* ./src/${project}/
+    [ -d /tmp/${project}/docs ] && cp -rv /tmp/${project}/docs/* ./src/${project}/
     rm -rf /tmp/${project}
 done
+
+if [ -n "${DCI_ORIGINAL_PROJECT_NAME}" ] && [ -n "${DCI_ORIGINAL_PROJECT_SRC_DIR}" ]; then
+    test -d ./src/${DCI_ORIGINAL_PROJECT_NAME} && cp -v ${DCI_ORIGINAL_PROJECT_SRC_DIR}/README*.md ./src/${DCI_ORIGINAL_PROJECT_NAME}
+    test -d ./src/${DCI_ORIGINAL_PROJECT_NAME}/docs && cp -rv ${DCI_ORIGINAL_PROJECT_SRC_DIR}/docs/* ./src/${DCI_ORIGINAL_PROJECT_NAME}
+fi
 
 npm install
 npm run build
