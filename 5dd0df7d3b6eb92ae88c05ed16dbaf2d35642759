@@ -22,6 +22,30 @@
       "revId": "5dd0df7d3b6eb92ae88c05ed16dbaf2d35642759",
       "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8308527f_31eee0ba",
+        "filename": "build.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 30
+      },
+      "writtenOn": "2018-10-10T16:49:47Z",
+      "side": 1,
+      "message": "Roflolo",
+      "parentUuid": "4f6e35fb_be956f44",
+      "range": {
+        "startLine": 7,
+        "startChar": 52,
+        "endLine": 7,
+        "endChar": 71
+      },
+      "revId": "5dd0df7d3b6eb92ae88c05ed16dbaf2d35642759",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
     }
   ]
 }
