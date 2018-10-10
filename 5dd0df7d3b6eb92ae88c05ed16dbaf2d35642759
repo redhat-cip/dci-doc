@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4f6e35fb_be956f44",
+        "filename": "build.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 56
+      },
+      "writtenOn": "2018-10-10T13:08:30Z",
+      "side": 1,
+      "message": "why downloading the dci-openstack-agent tarball for every projects ?",
+      "range": {
+        "startLine": 7,
+        "startChar": 52,
+        "endLine": 7,
+        "endChar": 71
+      },
+      "revId": "5dd0df7d3b6eb92ae88c05ed16dbaf2d35642759",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    }
+  ]
+}
