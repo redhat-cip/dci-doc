@@ -24,6 +24,6 @@
     "gitbook-plugin-advanced-emoji": "^0.2.2"
   },
   "devDependencies": {
-    "npm-run-all": "^4.1.1"
+    "npm-run-all": "^4.1.3"
   }
 }
