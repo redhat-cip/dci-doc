@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ce2c9be_5a9df785",
+        "filename": "build.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 56
+      },
+      "writtenOn": "2018-11-14T16:45:23Z",
+      "side": 1,
+      "message": "Why remove the docs directory in the destination ? all documentation files will be in the root directory of the project",
+      "range": {
+        "startLine": 14,
+        "startChar": 4,
+        "endLine": 14,
+        "endChar": 63
+      },
+      "revId": "dc98bd0147747cf13e05fc8ce9cb6ba8e562bef2",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    }
+  ]
+}
