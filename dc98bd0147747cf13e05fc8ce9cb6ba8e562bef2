@@ -22,6 +22,30 @@
       "revId": "dc98bd0147747cf13e05fc8ce9cb6ba8e562bef2",
       "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "59dc86a2_f8ab0c71",
+        "filename": "build.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 30
+      },
+      "writtenOn": "2018-11-27T21:34:23Z",
+      "side": 1,
+      "message": "The command was broken:\ncp: target \u0027./src/dci-control-server/docs/*\u0027 is not a directory\n\nIn addition, this avoid an extra level of directory. We don\u0027t have anything pointing on these files BTW.\n\nI will update my commit to:\n- clarify the message with this extra information.\n- and remov the ugly redirection of STDERR",
+      "parentUuid": "6ce2c9be_5a9df785",
+      "range": {
+        "startLine": 14,
+        "startChar": 4,
+        "endLine": 14,
+        "endChar": 63
+      },
+      "revId": "dc98bd0147747cf13e05fc8ce9cb6ba8e562bef2",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
     }
   ]
 }
