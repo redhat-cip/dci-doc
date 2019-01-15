@@ -14,3 +14,4 @@
         * [Certification](dci-openstack-agent/README_certification.md)
         * [Migration from dci-ansible-agent](dci-openstack-agent/README_migration_from_dci-ansible-agent.md)
     * [RHEL](dci-rhel-agent/README.md)
+        * [Beaker installation](ansible-playbook-dci-beaker/README.md)
