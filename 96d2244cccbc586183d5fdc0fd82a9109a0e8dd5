@@ -1,0 +1,8 @@
+Code-Review+2: Dimitri Savineau <dsavinea@redhat.com>
+Workflow+1: Gonéri Le Bouder <goneri@lebouder.net>
+Verified+2: Zuul CI <zuul@softwarefactory-project.io>
+Submitted-by: Zuul CI <zuul@softwarefactory-project.io>
+Submitted-at: Fri, 18 Jan 2019 14:32:29 +0000
+Reviewed-on: https://softwarefactory-project.io/r/14778
+Project: dci-doc
+Branch: refs/heads/master
