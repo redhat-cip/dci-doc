@@ -57,7 +57,7 @@ The control server is where the [components](#component), the [jobs](#job) and a
 
 A platform and the production configuration. It belongs to a [team](#team). The platform can be physical, virtual or hybrid.
 
-One of the nodes is the jumpbox. It will host the Agent, this service is in charge of the interactions with the [control server](#control-server) and the platform. A Remote CI is associated to a set of Topics.
+The remote ci will host the Agent, this service is in charge of the interactions with the [control server](#control-server) and the platform. A Remote CI is associated to a set of Topics.
 
 ## Team
 
@@ -65,12 +65,4 @@ A team represents a set of [users](#user).
 
 ## User
 
-A User belongs to a [team](#team), and can be a [product owner](#product-owner), an [administrator](#administrator) or standard user.
-
-### Product Owner
-
-A product owner is able to manage one product and teams attached to this product. 
-
-### Administrator
-
-Administrator is able to manage users in his team.
+A User belongs to a [team](#team)
