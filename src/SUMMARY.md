@@ -7,6 +7,7 @@
 * [API](dci-control-server/README.md)
 * [Authentication module](python-dciauth/README.md)
 * [Ansible module](dci-ansible/README.md)
+* [Downloader](dci-downloader/README.md)
 * [Agents](dci-openstack-agent/README.md)
     * [OpenStack](dci-openstack-agent/README.md)
         * [Installation](dci-openstack-agent/README.md)
