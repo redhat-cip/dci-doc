@@ -11,7 +11,7 @@ Documentation for [DCI](https://distributed-ci.io)
 
     npm install
     npm run dev
- 
+
 # build the documentation
 
     build.sh
