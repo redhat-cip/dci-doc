@@ -6,6 +6,7 @@ Documentation for [DCI](https://distributed-ci.io)
 
  * pandoc (yum install pandoc) if you want to build the pdf
  * node LTS
+ * npm
 
 ## run the documentation locally
 
