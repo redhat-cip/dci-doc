@@ -13,5 +13,6 @@
         * [Installation](dci-openstack-agent/README.md)
         * [Advanced](dci-openstack-agent/README_advanced.md)
         * [Certification](dci-openstack-agent/README_certification.md)
+        * [Contribute](dci-openstack-agent/README_contribute.md)
     * [RHEL](dci-rhel-agent/README.md)
         * [Beaker installation](ansible-playbook-dci-beaker/README.md)
