@@ -1,4 +1,7 @@
 _build/
 node_modules/
 _book/
+docs/
 *.pdf
+src/
+!src/gitbook/
