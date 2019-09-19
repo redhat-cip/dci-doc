@@ -1,19 +1,23 @@
 #!/usr/bin/env bash
 
-projects="dci-ui python-dciclient python-dciauth dci-control-server dci-ansible dci-openstack-agent dci-dev-env dci-rhel-agent dci-downloader dci-infra ansible-playbook-dci-beaker"
+temp_folder="/tmp/dci-doc"
+rm -rf ${temp_folder}
+mkdir ${temp_folder}
+cp -r . ${temp_folder}
+ls -alh ${temp_folder}
+projects="dci-control-server dci-ui python-dciclient python-dciauth dci-downloader dci-openstack-agent dci-rhel-agent ansible-playbook-dci-beaker"
 for project in ${projects}
 do
-    pushd /tmp
-    rm -rf ${project}
-    mkdir ${project}
-    curl -L https://api.github.com/repos/redhat-cip/${project}/tarball | tar xz --directory ${project} --strip=1
-    popd
-    rm -rf ./src/${project}
-    mkdir ./src/${project}
-    cp /tmp/${project}/README* ./src/${project}/
-    cp -r /tmp/${project}/docs/ ./src/${project}/docs/ 2>/dev/null
-    rm -rf /tmp/${project}
+    rm -rf ${temp_folder}/src/${project}
+    mkdir ${temp_folder}/src/${project}
+    cp ../${project}/README* ${temp_folder}/src/${project}/
+    cp -r ../${project}/docs/ ${temp_folder}/src/${project}/docs/ 2>/dev/null
 done
-
+pushd ${temp_folder}
 npm install
 npm run build
+popd
+rm -rf ./docs
+mkdir ./docs
+cp -r ${temp_folder}/_book/* ./docs/
+rm -rf ${temp_folder}
