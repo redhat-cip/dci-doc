@@ -5,7 +5,7 @@ Documentation for [DCI](https://distributed-ci.io)
 ## requirements
 
  * pandoc (yum install pandoc) if you want to build the pdf
- * node LTS
+ * noddummye LTS
  * npm
 
 ## run the documentation locally
