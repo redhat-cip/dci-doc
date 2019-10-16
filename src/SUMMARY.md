@@ -10,7 +10,8 @@
     * [Certification](dci-openstack-agent/README_certification.md)
     * [Contribute](dci-openstack-agent/README_contribute.md)
 * [dci-downloader](dci-downloader/README.md)
-* [Contribute]
+* [Questions and help](question_and_help.md)
+* [Contribute](dci-dev-env/README.md)
     * [User Interface](dci-ui/README.md)
     * [Command Line Interface](python-dciclient/README.md)
     * [API](dci-control-server/README.md)
