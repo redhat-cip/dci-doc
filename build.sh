@@ -13,8 +13,9 @@ do
     cp -r ../${project}/docs/ ${temp_folder}/src/${project}/docs/ 2>/dev/null
 done
 pushd ${temp_folder}
-npm install
-npm run build
+npm config set registry https://repository.engineering.redhat.com/nexus/repository/registry.npmjs.org/
+npm --loglevel debug install
+npm --loglevel debug run build
 popd
 rm -rf ./docs
 mkdir ./docs
