@@ -4,6 +4,7 @@
 * [dci-rhel-agent](dci-rhel-agent/README.md)
     * [Installation](dci-rhel-agent/README.md)
     * [Beaker installation](ansible-playbook-dci-beaker/README.md)
+    * [RHEL version support](RHEL_support/rhel_support.md)
 * [dci-openstack-agent](dci-openstack-agent/README.md)
     * [Installation](dci-openstack-agent/README.md)
     * [Advanced](dci-openstack-agent/docs/advanced.md)
