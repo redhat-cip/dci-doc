@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "13d60f47_594fa337",
+        "filename": "src/SUMMARY.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 405
+      },
+      "writtenOn": "2020-05-28T15:10:44Z",
+      "side": 1,
+      "message": "I think you need to add the docs/ folder on this line",
+      "range": {
+        "startLine": 14,
+        "startChar": 6,
+        "endLine": 14,
+        "endChar": 79
+      },
+      "revId": "5271c8eabbf219c332b24a7b869268b49f0c742e",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    }
+  ]
+}
