@@ -11,7 +11,7 @@
     * [Certification](dci-openstack-agent/docs/certification.md)
 * [dci-openshift-agent](dci-openshift-agent/README.md)
     * [Installation](dci-openshift-agent/README.md)
-    * [Openshift using virtual machines](dci-openshift-agent/docs/ocp_on_libvirt.md)
+    * [How to use Openshift from DCI with virtual machines](dci-openshift-agent/docs/ocp_on_libvirt.md)
 * [dci-downloader](dci-downloader/README.md)
 * [dci-control-server](dci-control-server/README.md)
     * [Contribute](dci-control-server/README.md)
@@ -20,3 +20,4 @@
 * [dci-ui](dci-ui/README.md)
 * [python-dciclient](python-dciclient/README.md)
 * [Questions and help](question_and_help.md)
+
