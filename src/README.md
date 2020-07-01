@@ -23,15 +23,15 @@ Like every project, Distributed CI has its own terms with specific meanings. As 
 
 ## Product
 
-A product is the main abstraction that describe a Red Hat product (RHEL, OpenStack, RHV).
+A product is the main abstraction that describe a Red Hat product (RHEL, OpenStack, Openshift).
 
 ## Topic
 
-A topic is a subset of a product. For example, RHEL7 or OSP10.
+A topic is a subset of a product. For example, RHEL8 or OSP10.
 
 ## Component
 
-A component is an artifact (file, package, url, etc.) attached to a [topic](#topic). An [agent](#agent) take a component in its workflow. Those components are immutable and regularly updated with newer versions of the artifact through a [feeder](#feeder).
+A component is an artifact (file, package, url, etc.) attached to a [topic](#topic). An [agent](#agent) take components in its workflow. Those components are immutable and regularly updated with newer versions of the artifact through a [feeder](#feeder).
 
 ## Feeder
 
