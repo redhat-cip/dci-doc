@@ -13,6 +13,7 @@
 * [dci-openshift-agent](dci-openshift-agent/README.md)
     * [Installation](dci-openshift-agent/README.md)
     * [How to use Openshift from DCI with virtual machines](dci-openshift-agent/docs/ocp_on_libvirt.md)
+    * [How to deploy a disconnected environment](dci-openshift-agent/docs/disconnected_en.md)
     * [RHOCP version support](OCP_support/ocp_support.md)
 * [dci-downloader](dci-downloader/README.md)
 * [dci-control-server](dci-control-server/README.md)
