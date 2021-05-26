@@ -4,13 +4,10 @@
 
 You can search for information in the documentation.
 
-### IRC
-
-You can ask for some help on the channel #distributed-ci on [freenode](https://freenode.net/)
 
 ### Email
 
-If you can't find a solution in the documentation or on IRC, you can send us an email at [distributed-ci@redhat.com](mailto:distributed-ci@redhat.com).
+If you can't find a solution in the documentation you can send us an email at [distributed-ci@redhat.com](mailto:distributed-ci@redhat.com).
 
 
 ## Bugs and feature requests
