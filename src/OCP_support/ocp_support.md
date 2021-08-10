@@ -7,10 +7,11 @@ Required images are retrieved directly from Quay.io.
 
 | topic   | Architecture |
 |---------|--------------|
-| OCP-4.3 | x86_64       |
-| OCP-4.4 | x86_64       |
-| OCP-4.5 | x86_64       |
+| OCP-4.9 | x86_64       |
+| OCP-4.8 | x86_64       |
+| OCP-4.7 | x86_64       |
 | OCP-4.6 | x86_64       |
+| OCP-4.5 | x86_64       |
 
 Only x86_64 is supported, contact your EPM if you would like a specific architecture (or version) not listed here.
 
