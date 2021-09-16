@@ -15,6 +15,7 @@ through dci-downloader.
 | OSP15   | puddle  | x86_64       |
 | OSP16   | compose | x86_64       |
 | OSP16.1 | compose | x86_64       |
+| OSP16.2 | compose | x86_64       |
 
 Contact your EPM if you would like a specific version or architecture not listed here.
 
