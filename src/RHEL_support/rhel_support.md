@@ -6,76 +6,58 @@ If you are using RHEL you are probably familiar with CDN or FTP. CDN contains of
 
 Red Hat Enterprise Linux content is in the form of a compose. A compose is a list of RPMs grouped by variants and by architectures.
 
-Here the list of the different composes supported in DCI
+DCI only support pre-release composes.
 
-| topic              | description                   | variants                                                                          | arches                   |
-| ------------------ | ----------------------------- | --------------------------------------------------------------------------------- | ------------------------ |
-| RHEL-7-nightly     | latest nightly for RHEL-7     | Server-NFV, Server-RT, Server-SAP, Server-SAPHANA, Server-optional, Server        | x86_64, ppc64le          |
-| RHEL-7-milestone   | latest milestone for RHEL-7   | Server-NFV, Server-RT, Server-SAP, Server-SAPHANA, Server-optional, Server        | x86_64, ppc64le          |
-| RHEL-7.7-milestone | GA version for RHEL-7.7       | Server-NFV, Server-RT, Server-SAP, Server-SAPHANA, Server-optional, Server        | x86_64, ppc64le          |
-| RHEL-7.8-milestone | GA version for RHEL-7.8       | Server-NFV, Server-RT, Server-SAP, Server-SAPHANA, Server-optional, Server        | x86_64, ppc64le          |
-| RHEL-7.9-milestone | latest milestone for RHEL-7.9 | Server-NFV, Server-RT, Server-SAP, Server-SAPHANA, Server-optional, Server        | x86_64, ppc64le          |
-| RHEL-8-nightly     | latest nightly for RHEL-8     | AppStream, BaseOS, CRB, HighAvailability, NFV, RT, ResilientStorage, SAP, SAPHANA | x86_64, aarch64, ppc64le |
-| RHEL-8-milestone   | latest milestone for RHEL-8   | AppStream, BaseOS, CRB, HighAvailability, NFV, RT, ResilientStorage, SAP, SAPHANA | x86_64, aarch64, ppc64le |
-| RHEL-8.1-milestone | GA version for RHEL-8.1       | AppStream, BaseOS, CRB, HighAvailability, NFV, RT, ResilientStorage, SAP, SAPHANA | x86_64, aarch64, ppc64le |
-| RHEL-8.2-milestone | GA version for RHEL-8.2       | AppStream, BaseOS, CRB, HighAvailability, NFV, RT, ResilientStorage, SAP, SAPHANA | x86_64, aarch64, ppc64le |
-| RHEL-8.3-milestone | latest milestone for RHEL-8.3 | AppStream, BaseOS, CRB, HighAvailability, NFV, RT, ResilientStorage, SAP, SAPHANA | x86_64, aarch64, ppc64le |
+For example if the latest release of Red Hat Enterprise Linux is `RHEL-8.4`, DCI supports `RHEL-X.Y` with X >= 8 and Y > 4. E.g. `RHEL-8.5` or `RHEL-9.0`.
+
+## Arches
+
+DCI supports x86_64, aarch64 and ppc64le architectures.
+
+## Variants
+
+DCI supports AppStream, BaseOS, CRB, HighAvailability, NFV, RT, ResilientStorage, SAP, SAPHANA variants.
 
 ## Versions
 
-RHEL major version corresponds to the first digit in the version number. Currently there is 2 major version of RHEL in DCI: version 7 and version 8
+RHEL major version corresponds to the first digit in the version number. Currently there is 2 major version of RHEL in DCI: version 8 and version 9
 
-RHEL minor version corresponds to the second digit in the version number. E.g. RHEL 7.8 or RHEL 8.2.
+RHEL minor version corresponds to the second digit in the version number. E.g. `RHEL-8.5` or `RHEL-9.0`.
 
 ## Channels
 
-In RHEL you have different channels. The nightly channel, that contains all the nightlies. And the milestone channel which contains milestones like snapshots, beta, release candidate, etc.
+DCI supports 3 different channels: Development, Nightly and Milestone channel.
+
+- Development composes are built every day, tested by basic tests and imported to Beaker and Openstack. They contain unverified RPMs and unverified Kernel changes.
+
+- Nightly composes are built every day, tested with more tests and imported to Beaker and Openstack. Those nightlies contain verified RPMs.
+
+- When Red Hat prepare the next RHEL version, they promote a Nightly Compose into a Milestone compose (alpha, beta and release candidate).
+  Nightly compose, Milestone compose are all the very same composes with the very same content, they differ in the amount of testing they received.
+
+Notes: Composes are tested internally. When tests failed DCI ignore those composes. So it is normal that the last nightly could be a few days old.
 
 ## Topics
 
-A topic is an abstraction to group different Composes together. The name of the topic contains the channel name and the version numbers. E.g. RHEL-8-milestone
+A topic is an abstraction to group different Composes together. The name of the topic contains the major and minor version. E.g. RHEL-8.5.
+The different Composes of the different channels are grouped by minor version.
 
-If you are using DCI it’s because you need to test RHEL in advance. Depending on your use cases, you should use a specific topic in DCI.
+Components for the `RHEL-8.5` topic:
 
-### Use case 1: Be prepared for the next minor release
+- `RHEL-8.5.0-20211007.n.0` | nightly compose
+- `RHEL-8.5.0-20211006.d.1` | development compose
 
-![rhel-8.x milestone](./rhel-8.x-milestone.png)
+Note: When you list topics in DCI you may see a channel in the name. E.g. `RHEL-8.4-milestone`. This feature has been deprecated in favor of [dci-downloader filters](https://docs.distributed-ci.io/dci-downloader/#filters).
 
-If the current minor release of Red Hat Enterprise Linux is 8.1, right after General Announcement (GA) you have 6 months to be prepared for the next minor release (RHEL-8.2). Approximately 1 month before GA you have access to the beta of the next minor version.
+If you want to access RHEL-8.5 nightlies only for example, you will have the appropriate filter in your settings file.
 
-For certain partners 1 month is too short. DCI allows you to have access to earlier milestones like alpha or snapshot. For this you need to consume the topic name:
-
-RHEL-(7/8/major version number).(0/1/2/minor version number)-milestone
-
-For example RHEL-8.2-milestone will contains milestones for the next unreleased minor version of RHEL-8
-
-> /!\ After the release of RHEL-8.2, this topic is not updated anymore. We only keep the GA components
-
-### Use case 2: Be prepared for future minor releases
-
-![rhel-8 milestone](./rhel-8-milestone.png)
-
-If you want to set up a continuous integration pipeline on the milestones with RHEL, and don't care about the minor version you can use the topic
-
-RHEL-(7/8/major version number)-milestone
-
-If the minor version is not specified, you will have access to the next unreleased minor version for the milestone channel.
-
-For example RHEL-8-milestone will contain milestones available internally for the next unreleased minor version of RHEL-8. Note that when, for example, RHEL-8.2 goes GA, the RHEL-8-milestone topic will contain the RHEL-8.2 GA until the RHEL-8.3 alpha is available.
-
-> /!\ RHEL-8 is a rolling topic. After GA of one minor version you will have access to the first milestone of the next unreleased minor version when it is available.. For example RHEL-8.2-beta1, ..., RHEL-8.2-ga, RHEL-8.3-alpha1, etc.
-
-### Use case 3: Test any Errata advisories or latest kernel in advance
-
-![rhel-8 nightly](./rhel-8-nightly.png)
-
-If you want to test any [errata advisories](https://access.redhat.com/support/policy/updates/errata) in advance, or get the latest kernel you can consume the topic RHEL-(7/8)-nightly
-
-> /!\ RHEL-(7/8) are deprecated. They are kept for backward compatibility reasons.
-
-This one will contain the latest tested and qualified available nightly. In this one you will have the latest kernel, the latest errata advisories (the one already released individually or the one that will be aggregated and push in the next minor release)
-
-Depending on where we are in the release of RHEL, you have access to the latest nightly available. So for example RHEL-8-nightly will point to RHEL-8.2.0-nigthly if the current minor release is RHEL-8.1
+```
+topics:
+  - name: RHEL-8.5
+    filters:
+      - type: compose
+        tag: nightly
+```
 
 ## FAQ
 
