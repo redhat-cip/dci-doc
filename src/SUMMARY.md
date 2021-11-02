@@ -14,6 +14,7 @@
     * [Installation](dci-openshift-agent/README.md)
     * [Libvirt environment](dci-openshift-agent/docs/ocp_on_libvirt.md)
     * [Disconnected environment](dci-openshift-agent/docs/disconnected_en.md)
+    * [Development](dci-openshift-agent/docs/development.md)
     * [RHOCP version support](OCP_support/ocp_support.md)
 * [dci-openshift-app-agent](dci-openshift-app-agent/README.md)
     * [Installation](dci-openshift-app-agent/README.md)
