@@ -2,13 +2,9 @@
 
 If you are using RHEL you are probably familiar with CDN or FTP. CDN contains officially released and supported content. FTP contains pre-release content. The FTP is updated manually and on demand. DCI allows you to get access to pre-release content in an automated way.
 
-## RHEL Compose
+## RHEL compose
 
 Red Hat Enterprise Linux content is in the form of a compose. A compose is a list of RPMs grouped by variants and by architectures.
-
-DCI only support pre-release composes.
-
-For example if the latest release of Red Hat Enterprise Linux is `RHEL-8.4`, DCI supports `RHEL-X.Y` with X >= 8 and Y > 4. E.g. `RHEL-8.5` or `RHEL-9.0`.
 
 ## Arches
 
@@ -24,50 +20,57 @@ RHEL major version corresponds to the first digit in the version number. Current
 
 RHEL minor version corresponds to the second digit in the version number. E.g. `RHEL-8.5` or `RHEL-9.0`.
 
-## Channels
+## Tags
 
-DCI supports 3 different channels: Development, Nightly and Milestone channel.
+Each composes are tagged. A compose can have the tag `nightly`, `candidate`, `milestone` or `update`.
 
-- Development composes are built every day, tested by basic tests and imported to Beaker and Openstack. They contain unverified RPMs and unverified Kernel changes.
+- `nightly` composes are built every day, tested and imported to Beaker and Openstack. Those nightlies contain verified RPMs.
 
-- Nightly composes are built every day, tested with more tests and imported to Beaker and Openstack. Those nightlies contain verified RPMs.
+- When Red Hat prepare the next RHEL version, a `nightly` become `candidate` then `milestone`.
+  `nightly`, `candidate` and `milestone` composes are all the very same composes with the very same content, they differ in the amount of testing they received.
 
-- When Red Hat prepare the next RHEL version, they promote a Nightly Compose into a Milestone compose (alpha, beta and release candidate).
-  Nightly compose, Milestone compose are all the very same composes with the very same content, they differ in the amount of testing they received.
+- When a compose is released and supported by Red Hat, some updates are continuously produced. Some composes after General Availability are tagged with the `update` tags.
 
-Notes: Composes are tested internally. When tests failed DCI ignore those composes. So it is normal that the last nightly could be a few days old.
+Note: composes are tested internally. When tests failed DCI ignore those composes. So it is normal that the last nightly could be a few days old.
 
 ## Topics
 
-A topic is an abstraction to group different Composes together. The name of the topic contains the major and minor version. E.g. RHEL-8.5.
-The different Composes of the different channels are grouped by minor version.
+A topic is an abstraction to group different composes together. The name of the topic contains the major and minor version. E.g. RHEL-8.5.
 
-Components for the `RHEL-8.5` topic:
+For example you can list the components for the `RHEL-9.0` topic:
 
-- `RHEL-8.5.0-20211007.n.0` | nightly compose
-- `RHEL-8.5.0-20211006.d.1` | development compose
+- `RHEL-9.0.0-20211121.7` | tags: `nightly`, `kernel:5.14.0-17.el9`
+- `RHEL-9.0.0-20211120.6` | tags: `nightly`, `kernel:5.14.0-17.el9`
+- `RHEL-9.0.0-20211026.1` | tags: `candidate`, `kernel:5.14.0-17.el9`
+	
 
 Note: When you list topics in DCI you may see a channel in the name. E.g. `RHEL-8.4-milestone`. This feature has been deprecated in favor of [dci-downloader filters](https://docs.distributed-ci.io/dci-downloader/#filters).
 
-If you want to access RHEL-8.5 nightlies only for example, you will have the appropriate filter in your settings file.
+If you want to access RHEL-9.0 nightlies only for example, you will have the appropriate filter in your settings file.
 
 ```
 topics:
-  - name: RHEL-8.5
+  - name: RHEL-9.0
     filters:
       - type: compose
         tag: nightly
 ```
 
+Note: We recommend to use the topic name without filters. Like that you will always have the latest component available for the topic.
+
 ## FAQ
 
-### How can I access z-stream updates ?
+### How can I test the latest major version ?
 
-In short: you can’t get those updates in DCI right now because we are focused on pre-ga content. Feel free to tell us, if this is something important for you.
+You can use a wildcard filter `RHEL-{8|9}.*` to download the latest available RHEL version in the topic name.
 
-> During the Full Support Phase, qualified Critical and Important Security errata advisories (RHSAs) and Urgent and Selected (at Red Hat discretion) High Priority Bug Fix errata advisories (RHBAs) may be released as they become available.
+E.g. Get the latest RHEL-9 topic available in DCI:
 
-After GA during the full support phase, Errata advisories are pushed on the CDN as they become available. So the time between an errata is tested and pushed on the CDN is very short. This is why DCI chose to not provide content for specific minor releases after GA.
+```
+topics:
+  - name: RHEL-9.*
+```
+
 
 ### Where can some documentation about the Red Hat Enterprise Linux Life Cycle?
 
