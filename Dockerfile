@@ -1,17 +1,16 @@
-FROM centos:7
+FROM registry.access.redhat.com/ubi8/nodejs-14-minimal
 
-LABEL name="DCI DOC" version="0.0.2"
+LABEL name="DCI DOC"
+LABEL version="0.2.0"
 LABEL maintainer="DCI Team <distributed-ci@redhat.com>"
 
-WORKDIR /opt/dci-doc
-COPY package.json /opt/dci-doc/
+ENV LANG en_US.UTF-8
 
-RUN yum install -y epel-release && \
-    yum install -y nodejs npm && \
-    yum clean all && \
-    npm install && \
-    npm cache clean
+COPY package*.json ./
+RUN npm config set unsafe-perm true
+RUN npm install --silent
+RUN mkdir -p node_modules/.cache && chmod -R 777 node_modules/.cache
+COPY . ./
 
 EXPOSE 4000
-
-CMD ["npm", "run", "dev"]
+CMD ["npm", "start"]
