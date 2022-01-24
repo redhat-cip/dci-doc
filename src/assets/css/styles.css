@@ -1,0 +1,11 @@
+:root > * {
+  --md-typeset-a-color: red;
+}
+
+a{
+  text-decoration: underline;
+}
+
+.md-nav__list a{
+text-decoration: none;
+}

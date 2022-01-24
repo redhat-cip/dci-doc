@@ -1,6 +1,2 @@
-_build/
-node_modules/
-_book/
-docs/*
-!src/docs/
-*.pdf
+docs/
+venv/

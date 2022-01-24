@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/ubi8/nodejs-14-minimal
+FROM registry.access.redhat.com/ubi8/python-36
 
 LABEL name="DCI DOC"
 LABEL version="0.2.0"
@@ -6,11 +6,9 @@ LABEL maintainer="DCI Team <distributed-ci@redhat.com>"
 
 ENV LANG en_US.UTF-8
 
-COPY package*.json ./
-RUN npm config set unsafe-perm true
-RUN npm install --silent
-RUN mkdir -p node_modules/.cache && chmod -R 777 node_modules/.cache
 COPY . ./
+RUN pip install -r requirements.txt
 
 EXPOSE 4000
-CMD ["npm", "start"]
+
+CMD ["mkdocs", "serve"]

@@ -14,10 +14,12 @@ do
     cp -r ../${project}/docs/ ${temp_folder}/src/${project}/docs/ 2>/dev/null || true
 done
 pushd ${temp_folder}
-npm install
-npm run build
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+mkdocs build
 popd
 rm -rf ./docs
 mkdir ./docs
-cp -r ${temp_folder}/_book/* ./docs/
+cp -r ${temp_folder}/docs/ ./
 rm -rf ${temp_folder}
