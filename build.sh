@@ -13,6 +13,14 @@ do
     cp ../${project}/README* ${temp_folder}/src/${project}/
     cp -r ../${project}/docs/ ${temp_folder}/src/${project}/docs/ 2>/dev/null || true
 done
+# dci openshift app agent roles
+mkdir -p ${temp_folder}/src/dci-openshift-app-agent/roles/
+pushd ../dci-openshift-app-agent
+for f in roles/*; do
+  cp -r "${f}" ${temp_folder}/src/dci-openshift-app-agent/${f}/
+done
+popd
+
 pushd ${temp_folder}
 python3 -m venv venv
 source venv/bin/activate

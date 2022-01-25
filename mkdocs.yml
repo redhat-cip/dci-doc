@@ -14,28 +14,27 @@ extra_css:
   - assets/css/styles.css
 nav:
   - Introduction: "README.md"
-  - dci-rhel-agent:
+  - DCI RHEL Agent:
       - Installation: "dci-rhel-agent/README.md"
       - Beaker installation: "ansible-playbook-dci-beaker/README.md"
       - RHEL version support: "RHEL_support/rhel_support.md"
-  - dci-openstack-agent:
+  - DCI OpenStack Agent:
       - Installation: "dci-openstack-agent/README.md"
       - Advanced: "dci-openstack-agent/docs/advanced.md"
       - Certification: "dci-openstack-agent/docs/certification.md"
       - RHOSP version support: "OSP_support/osp_support.md"
-  - dci-openshift-agent:
+  - DCI OpenShift Agent:
       - Installation: "dci-openshift-agent/README.md"
       - Libvirt environment: "dci-openshift-agent/docs/ocp_on_libvirt.md"
       - Disconnected environment: "dci-openshift-agent/docs/disconnected_en.md"
       - Development: "dci-openshift-agent/docs/development.md"
       - RHOCP version support: "OCP_support/ocp_support.md"
-  - dci-openshift-app-agent:
-      - Installation: "dci-openshift-app-agent/README.md"
-  - dci-downloader: "dci-downloader/README.md"
-  - dci-control-server:
-      - Contribute: "dci-control-server/README.md"
-      - API: "dci-control-server/docs/API.md"
-      - Authentication: "python-dciauth/README.md"
-  - dci-ui: "dci-ui/README.md"
-  - python-dciclient: "python-dciclient/README.md"
+  - DCI OpenShift App Agent: "dci-openshift-app-agent/README.md"
+  - DCI Downloader: "dci-downloader/README.md"
+  - DCI CLI: "python-dciclient/README.md"
+  - DCI API: "dci-control-server/docs/API.md"
+  - Contribute:
+      - dci-control-server: "dci-control-server/README.md"
+      - dci-ui: "dci-ui/README.md"
+      - dci-auth: "python-dciauth/README.md"
   - Questions and help: "question_and_help.md"

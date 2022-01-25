@@ -41,7 +41,7 @@ A feeder is a script in charge of uploading newer versions of [components](#comp
 
 The core purpose of DCI is that given a set of [components](#component), an agent will pull them, install and run certification and validation tests.
 
-An agent is a script (ansible, python, bash) that automates the installation of a [components](#component). We try to use the same agent for a given [product](#product). The agent is the result of collaboration between a partner and Red Hat. DCI offers one agent per [product](#product). It is up to the partner to put his automation.
+An agent is a script (ansible, python, bash) that automates the installation of a [component](#component). We try to use the same agent for a given [product](#product). The agent is the result of collaboration between a partner and Red Hat. DCI offers one agent per [product](#product). It is up to the partner to put his automation.
 
 ## Job
 
