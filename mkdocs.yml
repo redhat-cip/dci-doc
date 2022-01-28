@@ -17,18 +17,18 @@ nav:
   - DCI RHEL Agent:
       - Installation: "dci-rhel-agent/README.md"
       - Beaker installation: "ansible-playbook-dci-beaker/README.md"
-      - RHEL version support: "RHEL_support/rhel_support.md"
+      - RHEL version support: "dci-rhel-agent/docs/support.md"
   - DCI OpenStack Agent:
       - Installation: "dci-openstack-agent/README.md"
       - Advanced: "dci-openstack-agent/docs/advanced.md"
       - Certification: "dci-openstack-agent/docs/certification.md"
-      - RHOSP version support: "OSP_support/osp_support.md"
+      - RHOSP version support: "dci-openstack-agent/docs/support.md"
   - DCI OpenShift Agent:
       - Installation: "dci-openshift-agent/README.md"
       - Libvirt environment: "dci-openshift-agent/docs/ocp_on_libvirt.md"
       - Disconnected environment: "dci-openshift-agent/docs/disconnected_en.md"
       - Development: "dci-openshift-agent/docs/development.md"
-      - RHOCP version support: "OCP_support/ocp_support.md"
+      - RHOCP version support: "dci-openshift-agent/docs/support.md"
   - DCI OpenShift App Agent: "dci-openshift-app-agent/README.md"
   - DCI Downloader: "dci-downloader/README.md"
   - DCI CLI: "python-dciclient/README.md"
