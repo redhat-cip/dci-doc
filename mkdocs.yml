@@ -32,6 +32,7 @@ nav:
   - DCI OpenShift App Agent: "dci-openshift-app-agent/README.md"
   - DCI Downloader: "dci-downloader/README.md"
   - DCI CLI: "python-dciclient/README.md"
+  - DCI Pipeline/Queue: "dci-pipeline/README.md"
   - DCI API: "dci-control-server/docs/API.md"
   - Contribute:
       - dci-control-server: "dci-control-server/README.md"
