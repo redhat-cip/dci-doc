@@ -25,6 +25,9 @@ nav:
       - RHOSP version support: "dci-openstack-agent/docs/support.md"
   - DCI OpenShift Agent:
       - Installation: "dci-openshift-agent/README.md"
+      - Alternate installation methods:
+        - User Provisioned Infrastructure: "dci-openshift-agent/docs/upi.md"
+        - Assisted Installer: "dci-openshift-agent/docs/a-i.md"
       - Libvirt environment: "dci-openshift-agent/docs/ocp_on_libvirt.md"
       - Disconnected environment: "dci-openshift-agent/docs/disconnected_en.md"
       - Development: "dci-openshift-agent/docs/development.md"
