@@ -5,7 +5,7 @@ rm -rf docs build
 mkdir build
 cp -ra src/* build
 
-projects="dci-control-server dci-ui python-dciclient python-dciauth dci-downloader dci-openstack-agent dci-rhel-agent dci-openshift-agent ansible-playbook-dci-beaker dci-openshift-app-agent dci-pipeline"
+projects="dci-control-server dci-ui python-dciclient python-dciauth dci-downloader dci-openstack-agent dci-rhel-agent dci-openshift-agent dci-openshift-app-agent dci-pipeline"
 for project in ${projects}; do
     echo "${project}"
     rsync -avm --exclude=".*" --include="*/" --include="*.md" --exclude="*" "../${project}/" "build/${project}/"

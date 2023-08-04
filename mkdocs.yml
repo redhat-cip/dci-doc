@@ -16,7 +16,6 @@ nav:
   - Introduction: "README.md"
   - DCI RHEL Agent:
       - Installation: "dci-rhel-agent/README.md"
-      - Beaker installation: "ansible-playbook-dci-beaker/README.md"
       - RHEL version support: "dci-rhel-agent/docs/support.md"
   - DCI OpenStack Agent:
       - Installation: "dci-openstack-agent/README.md"
