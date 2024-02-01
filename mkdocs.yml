@@ -14,6 +14,8 @@ extra_css:
   - assets/css/styles.css
 nav:
   - Introduction: "README.md"
+  - General Concepts: "general_concepts.md"
+  - Get started: "get_started.md"
   - DCI RHEL Agent:
       - Installation: "dci-rhel-agent/README.md"
       - RHEL version support: "dci-rhel-agent/docs/support.md"
