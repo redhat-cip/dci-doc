@@ -1,14 +1,19 @@
-FROM registry.access.redhat.com/ubi8/python-36
+FROM registry.access.redhat.com/ubi9/ubi-minimal
 
 LABEL name="DCI DOC"
-LABEL version="0.2.1"
+LABEL version="0.3.0"
 LABEL maintainer="DCI Team <distributed-ci@redhat.com>"
 
-ENV LANG en_US.UTF-8
+RUN microdnf -y upgrade && \
+    microdnf -y install nginx && \
+    microdnf clean all
 
-COPY . ./
-RUN pip install -r requirements.txt
+COPY ./docs /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-EXPOSE 4000
+RUN ln -sf /dev/stdout /var/log/nginx/access.log \
+    && ln -sf /dev/stderr /var/log/nginx/error.log
 
-CMD ["mkdocs", "serve"]
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
