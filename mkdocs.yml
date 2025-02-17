@@ -40,6 +40,7 @@ nav:
   - DCI Downloader: "dci-downloader/README.md"
   - DCI CLI: "python-dciclient/README.md"
   - DCI Pipeline/Queue: "dci-pipeline/README.md"
+  - DCI Ansible: "dci-ansible/README.md"
   - DCI API: "dci-control-server/docs/API.md"
   - Contribute:
       - dci-control-server: "dci-control-server/README.md"
