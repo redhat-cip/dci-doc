@@ -12,33 +12,33 @@ Following this meeting, your EPM will create your team and give you access to th
 
 > At this point during onboarding, check that you see the product(s) that interest you in the interface. You can click on products in the menu, or go to [https://www.distributed-ci.io/products](https://www.distributed-ci.io/products)
 
-## Create your DCI jumpbox
+## Create your DCI jumphost
 
-Depending on what you're looking to do, the requirements for your jumpbox may vary. However, in all cases you will need a physical server or a virtual machine on which you will launch your agent.
+Depending on what you're looking to do, the requirements for your jumphost may vary. However, in all cases you will need a physical server or a virtual machine on which you will launch your agent.
 
 You will refine the requirements during the presentation with the DCI team.
 
-In any case, your jumpbox must be running the latest stable RHEL 8 release (8.4 or higher) and registered via RHSM. And you should have at least 160GB of free space available.
+In any case, your jumphost must be running the latest stable RHEL 8 release (8.4 or higher) and registered via RHSM. And you should have at least 160GB of free space available.
 
-The jumpbox should have access to the internet.
+The jumphost should have access to the internet.
 
 ## Create your first remoteci
 
-A remoteci contains the information necessary for the authentication of your jumpbox. To create a remoteci, click on Remotecis in the menu on DCI UI, or go to [https://www.distributed-ci.io/remotecis](https://www.distributed-ci.io/remotecis) then click on the Create a new remoteci button.
+A remoteci contains the information necessary for the authentication of your jumphost. To create a remoteci, click on Remotecis in the menu on DCI UI, or go to [https://www.distributed-ci.io/remotecis](https://www.distributed-ci.io/remotecis) then click on the Create a new remoteci button.
 
-The name of your remoteci does not matter. But if there are several of you working on the same jumpbox, give your remoteci an explicit name.
+The name of your remoteci does not matter. But if there are several of you working on the same jumphost, give your remoteci an explicit name.
 
-After creating your remoteci, copy the contents of the dcirc.sh file (Authentication column of your `remoteci > dcirc.sh > Copy to clipboard`), and save it on a file in your jumpbox (e.g. `~/dcirc.sh`).
+After creating your remoteci, copy the contents of the dcirc.sh file (Authentication column of your `remoteci > dcirc.sh > Copy to clipboard`), and save it on a file in your jumphost (e.g. `~/dcirc.sh`).
 
-## Install the DCI client on your jumpbox
+## Install the DCI client on your jumphost
 
 [DCI client](../python-dciclient) is a python library and command line scripts which allows you to consult the server control API. The client is always installed by different agents. But to test our authentication file, we are going to install it by itself.
 
 ### Add the DCI repository
 
-The first thing to do is to install the dci-release package which adds the DCI RPMs repository to your jumpbox repositories. It will add dci.repo in your dnf repositories.
+The first thing to do is to install the dci-release package which adds the DCI RPMs repository to your jumphost repositories. It will add dci.repo in your dnf repositories.
 
-On your jumpbox, execute the command:
+On your jumphost, execute the command:
 
 ```
 dnf -y install https://packages.distributed-ci.io/dci-release.el8.noarch.rpm
@@ -46,7 +46,7 @@ dnf -y install https://packages.distributed-ci.io/dci-release.el8.noarch.rpm
 
 ### Install the DCI Client tool
 
-To install the dciclient tool on your jumpbox, run the following command:
+To install the dciclient tool on your jumphost, run the following command:
 
 ```
 dnf -y install python3-dciclient

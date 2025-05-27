@@ -8,26 +8,25 @@ DCI tools retrieve information about your continuous integration to display it o
 
 You will need a server with RHEL installed on it (it should work with Centos Stream, but for the sake of simplicity we are only talking about RHEL in this documentation).
 
-We call this server the **jumpbox**. This can be a physical machine or a virtual machine. For exact requirements, please refer to the corresponding section for the tool in the documentation.
+We call this server the **jumphost**. This can be a physical machine or a virtual machine. For exact requirements, please refer to the corresponding section for the tool in the documentation.
 
-On this jumpbox we install the RPMs necessary for downloading and launching your continuous integration jobs. The tool we use to download, install and test RHEL or Openshift is called an **agent**. You have one agent per product. You will install the necessary agent on your jumpbox (i.e. dci-rhel-agent or dci-openshift-agent)
+On this jumphost we install the RPMs necessary for downloading and launching your continuous integration jobs. The tool we use to download, install and test RHEL or Openshift is called an **agent**. You have one agent per product. You will install the necessary agent on your jumphost (i.e. dci-rhel-agent or dci-openshift-agent)
 
 All agents need to be configured. There is a configuration common to all agents which we will detail below. This configuration is used to secure communication between the agent and the control server on which CI jobs are saved. To verify the identity of your server, protect in-transit data and forbid the reuse of the signed requests, we use HMAC v4 auth from AWS and HTTPS to protect the communication between your agent and the **control server**.
 
 The other part of the configuration is agent-specific, and changes depending on the Red Hat product you are using.
 
-
 ## Secure communication between the agent and the control server
 
-Each time you run a DCI tool that communicates with the control server, the latter will look for 3 environment variables (`DCI_CLIENT_ID`, `DCI_API_SECRET` and `DCI_CS_URL`). These variables are saved in a **dcirc.sh** or **credentials.yaml** file. These variables are attached to a resource called a **remoteci**. You create a remoteci on the user interface (We explain this in more detail in the [get started](get_started) documentation) and you save the variables into the dcirc.sh or credentials.yaml file on your jumpbox.
+Each time you run a DCI tool that communicates with the control server, the latter will look for 3 environment variables (`DCI_CLIENT_ID`, `DCI_API_SECRET` and `DCI_CS_URL`). These variables are saved in a **dcirc.sh** or **credentials.yaml** file. These variables are attached to a resource called a **remoteci**. You create a remoteci on the user interface (We explain this in more detail in the [get started](get_started) documentation) and you save the variables into the dcirc.sh or credentials.yaml file on your jumphost.
 
-Often there is only one remoteci per jumpbox. But if you are several engineers working on the same jumpbox, you can have several remotecis. You will launch the correct file before launching an agent (for example: `source /etc/dci-rhel-agent/dcirc.sh && dci-rhel-agent-ctl start`)
+Often there is only one remoteci per jumphost. But if you are several engineers working on the same jumphost, you can have several remotecis. You will launch the correct file before launching an agent (for example: `source /etc/dci-rhel-agent/dcirc.sh && dci-rhel-agent-ctl start`)
 
 ## Run a DCI job with the agent
 
-After the onboarding, you will install the rpm of the agent that interests you. You will configure your authentication file on your jumpbox. You will configure the agent so that it installs RHEL or OpenShift on your environment. This is often the most complicated part. Then you will launch a DCI job. Unlike CI tools, it is the client who initiates the execution of a job. You can run a job manually at the beginning, and then run a job every day via a Systemd command or a cron.
+After the onboarding, you will install the rpm of the agent that interests you. You will configure your authentication file on your jumphost. You will configure the agent so that it installs RHEL or OpenShift on your environment. This is often the most complicated part. Then you will launch a DCI job. Unlike CI tools, it is the client who initiates the execution of a job. You can run a job manually at the beginning, and then run a job every day via a Systemd command or a cron.
 
-When you run an agent, behind the scenes it launches an Ansible playbook. To avoid making this documentation too complex, know that the execution is done either directly with Ansible installed on the jumpbox, or in a DCI container in which Ansible is installed.
+When you run an agent, behind the scenes it launches an Ansible playbook. To avoid making this documentation too complex, know that the execution is done either directly with Ansible installed on the jumphost, or in a DCI container in which Ansible is installed.
 As you are familiar with Ansible, you will not be surprised to see that the standard output of a DCI job corresponds to the standard output of an Ansible run.
 
 ## Understand Product > Topic > Component in DCI
@@ -39,9 +38,9 @@ In DCI, a **topic** represents a minor version of the product. You will find for
 
 A component corresponds to a given version of the product over time. For example in RHEL you will have multiple nightlies following the stream, one nightly being a component (e.g. `RHEL-9.4.0-20231013.18`)
 
-| Product | Topic | Component |
-| --- | --- | --- |
-| RHEL | RHEL-9.4 | RHEL-9.4.0-20231013.18 |
+| Product   | Topic    | Component                               |
+| --------- | -------- | --------------------------------------- |
+| RHEL      | RHEL-9.4 | RHEL-9.4.0-20231013.18                  |
 | OpenShift | OCP-4.16 | OpenShift 4.16 nightly 2024-01-31 07:38 |
 
 ## Customizing a DCI job with hooks
@@ -50,10 +49,10 @@ Even though agents are very configurable, we have a way to easily customize the 
 
 A DCI job is often divided into several steps (new/pre-run/running/post-run):
 
-* In the **new** step, we build the job on the control server and attach the right component of the product (more on this later).
-* In the **pre-run** step, we prepare the environment, we check that the state of the jumpbox is correct.
-* In the **running** step, we will install the product (RHEL or OpenShift).
-* In the **post-run** step, we will launch tests on Red Hat products. Automatic hardware pre certification is also run at this step.
+- In the **new** step, we build the job on the control server and attach the right component of the product (more on this later).
+- In the **pre-run** step, we prepare the environment, we check that the state of the jumphost is correct.
+- In the **running** step, we will install the product (RHEL or OpenShift).
+- In the **post-run** step, we will launch tests on Red Hat products. Automatic hardware pre certification is also run at this step.
 
 To customize your job, you will create different hooks (`pre-run.yml`, `install.yml`, `post-run.yml`, etc). A hook is an ansible playbook. The agent launches the hook during a DCI job. For example, in `hooks/install.yml` you can add your ansible code to install your product on top of the Red Hat product. And in the `hooks/post-run.yml` hook, you can add your tests to test your product running on RHEL or OpenShift.
 
