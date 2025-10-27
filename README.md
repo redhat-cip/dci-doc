@@ -1,3 +1,6 @@
+⚠️ **Note:** This project has been migrated to a new repository.
+Please visit the new location [here](https://github.com/distributedci/dci-doc).
+
 # dci-doc
 
 Documentation for [DCI](https://distributed-ci.io)
